@@ -1,0 +1,85 @@
+{
+  "name": "Yesha Prajapati",
+  "role": "Marketing Operations",
+  "kicker": "Marketing operations · Chicago",
+  "headSmall": "I keep the marketing running",
+  "headLine2": "for 35",
+  "headLine2Italic": "35",
+  "headLine3": "firms.",
+  "sub": "Campaigns, brand systems and the CRM plumbing underneath them, at Archer Lewis. Before this I worked on organic search for Ford.com.",
+  "subBold": "Archer Lewis",
+  "stats": [
+    {
+      "figure": "35+",
+      "label": "Firms supported"
+    },
+    {
+      "figure": "5",
+      "label": "Years in marketing"
+    },
+    {
+      "figure": "4",
+      "label": "Service lines"
+    },
+    {
+      "figure": "3",
+      "label": "Certifications"
+    }
+  ],
+  "methodHeading": "How it usually",
+  "methodHeadingItalic": "goes",
+  "statement": "Most of my job is making sure 35 firms can market themselves without running",
+  "statementItalic": "35 different systems",
+  "bio": [
+    {
+      "text": "Each firm has its own market and its own clients, but they share a brand. So most of the work is building something once and making it hold up everywhere it lands."
+    },
+    {
+      "text": "At VML I worked on organic search for Ford.com. Mostly keyword and competitor research, written up as recommendations the content teams could use."
+    },
+    {
+      "text": "Before that: four internships across social, product marketing and creative. Small teams, so I got to do a bit of everything."
+    }
+  ],
+  "photo": "",
+  "photoCaption": "Marketing Operations Associate",
+  "closeHeading": "Say",
+  "closeHeadingItalic": "hello",
+  "email": "hello@example.com",
+  "linkedin": "https://www.linkedin.com/in/",
+  "city": "Chicago, IL",
+  "seoTitle": "Yesha Prajapati — Marketing Operations",
+  "seoDesc": "Marketing operations at Archer Lewis. Campaigns, brand systems and CRM for 35 accounting firms. Previously organic search for Ford.com at VML.",
+  "colorBg": "#2C0A16",
+  "colorAccent": "#F4C9DD",
+  "navItems": [
+    {
+      "label": "Work",
+      "anchor": "work"
+    },
+    {
+      "label": "Method",
+      "anchor": "method"
+    },
+    {
+      "label": "About",
+      "anchor": "about"
+    },
+    {
+      "label": "Career",
+      "anchor": "career"
+    },
+    {
+      "label": "Contact",
+      "anchor": "contact"
+    }
+  ],
+  "workTag": "Selected work",
+  "emailLabel": "Email me",
+  "linkedinLabel": "LinkedIn",
+  "showStats": true,
+  "showMethod": true,
+  "showStatement": true,
+  "showBio": true,
+  "showCareer": true
+}

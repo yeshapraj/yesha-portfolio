@@ -1,0 +1,285 @@
+media_folder: "src/images"
+public_folder: "/images"
+publish_mode: simple
+
+site_url: /
+logo_url: /images/logo.png
+
+collections:
+  # ── Case studies ───────────────────────────────────────
+  - name: "projects"
+    label: "Case studies"
+    label_singular: "Case study"
+    folder: "src/projects"
+    create: true
+    delete: true
+    slug: "{{order}}-{{slug}}"
+    summary: "{{order}} · {{title}}"
+    sortable_fields: ["order", "title"]
+    fields:
+      - {
+          name: "title",
+          label: "Title",
+          widget: "string",
+          hint: "The first case study (order 1) gets the big headline treatment. Keep it short if it's not #1.",
+        }
+      - {
+          name: "titleItalic",
+          label: "Part of the title to italicise",
+          widget: "string",
+          required: false,
+          hint: "Only used on the featured case study. Type the exact words from the title, e.g. 35 firms. Leave blank for none.",
+        }
+      - { name: "client", label: "Client or company", widget: "string" }
+      - {
+          name: "order",
+          label: "Position",
+          widget: "number",
+          value_type: "int",
+          min: 1,
+          hint: "1 is featured at the top. 2, 3, 4… are listed below it.",
+        }
+      - {
+          name: "points",
+          label: "What you did",
+          widget: "list",
+          summary: "{{fields.text}}",
+          hint: "Three or four lines. Say what the work was, not what it demonstrates.",
+          field: { name: "text", label: "Line", widget: "text" },
+        }
+      - {
+          name: "image",
+          label: "Screenshot",
+          widget: "image",
+          required: false,
+          hint: "Only shown on the featured case study. A real screenshot beats anything else you can add to this page.",
+        }
+      - {
+          name: "caption",
+          label: "Placeholder text",
+          widget: "string",
+          required: false,
+          hint: "Shown in the empty frame until you upload a screenshot.",
+        }
+      - { name: "body", label: "", widget: "hidden", default: "" }
+
+  # ── Method ─────────────────────────────────────────────
+  - name: "method"
+    label: "Method steps"
+    label_singular: "Step"
+    folder: "src/method"
+    create: true
+    delete: true
+    slug: "{{order}}-{{slug}}"
+    summary: "{{order}} · {{title}}"
+    sortable_fields: ["order"]
+    fields:
+      - { name: "title", label: "Step name", widget: "string" }
+      - {
+          name: "order",
+          label: "Position",
+          widget: "number",
+          value_type: "int",
+          min: 1,
+        }
+      - {
+          name: "body",
+          label: "Description",
+          widget: "text",
+          hint: "Two sentences. Write it the way you'd explain it out loud.",
+        }
+
+  # ── Work history ───────────────────────────────────────
+  - name: "roles"
+    label: "Work history"
+    label_singular: "Role"
+    folder: "src/roles"
+    create: true
+    delete: true
+    slug: "{{order}}-{{slug}}"
+    summary: "{{title}} · {{company}}"
+    sortable_fields: ["order"]
+    fields:
+      - { name: "title", label: "Job title", widget: "string" }
+      - { name: "company", label: "Company", widget: "string" }
+      - {
+          name: "dates",
+          label: "Dates",
+          widget: "string",
+          hint: "e.g. March 2025 — Present",
+        }
+      - {
+          name: "order",
+          label: "Position",
+          widget: "number",
+          value_type: "int",
+          min: 1,
+          hint: "1 is newest, at the top.",
+        }
+      - {
+          name: "current",
+          label: "This is my current job",
+          widget: "boolean",
+          default: false,
+          required: false,
+          hint: "Adds the Now tag.",
+        }
+      - {
+          name: "summary",
+          label: "One line about the role",
+          widget: "text",
+          required: false,
+          hint: "Optional. Leave blank and the entry stays as title, company and dates.",
+        }
+      - { name: "body", label: "", widget: "hidden", default: "" }
+
+  # ── Everything else ────────────────────────────────────
+  - name: "settings"
+    label: "Page content"
+    files:
+      - name: "site"
+        label: "Hero, about and contact"
+        file: "src/_data/site.json"
+        fields:
+          - { name: "name", label: "Your name", widget: "string" }
+          - { name: "role", label: "Role (used in the page title)", widget: "string" }
+          - {
+              name: "kicker",
+              label: "Small line above the headline",
+              widget: "string",
+            }
+          - {
+              name: "headSmall",
+              label: "Headline — small grey first line",
+              widget: "string",
+            }
+          - {
+              name: "headLine2",
+              label: "Headline — second line",
+              widget: "string",
+            }
+          - {
+              name: "headLine2Italic",
+              label: "Headline — italic pink word",
+              widget: "string",
+              required: false,
+              hint: "Exact word from the second line, e.g. 35. Leave blank for none.",
+            }
+          - { name: "headLine3", label: "Headline — third line", widget: "string" }
+          - { name: "sub", label: "Paragraph under the headline", widget: "text" }
+          - {
+              name: "subBold",
+              label: "Words in that paragraph to highlight",
+              widget: "string",
+              required: false,
+              hint: "Type the exact words, e.g. Archer Lewis",
+            }
+          - {
+              name: "stats",
+              label: "Numbers row",
+              widget: "list",
+              summary: "{{fields.figure}} — {{fields.label}}",
+              max: 4,
+              fields:
+                [
+                  { name: "figure", label: "Number", widget: "string" },
+                  { name: "label", label: "Label", widget: "string" },
+                ],
+            }
+          - {
+              name: "methodHeading",
+              label: "Method heading",
+              widget: "string",
+            }
+          - {
+              name: "methodHeadingItalic",
+              label: "Method heading — italic word",
+              widget: "string",
+            }
+          - {
+              name: "statement",
+              label: "Big statement line",
+              widget: "text",
+              hint: "The large sentence that lights up word by word.",
+            }
+          - {
+              name: "statementItalic",
+              label: "Statement — italic ending",
+              widget: "string",
+            }
+          - {
+              name: "bio",
+              label: "About paragraphs",
+              widget: "list",
+              summary: "{{fields.text}}",
+              field: { name: "text", label: "Paragraph", widget: "text" },
+            }
+          - {
+              name: "photo",
+              label: "Portrait",
+              widget: "image",
+              required: false,
+            }
+          - {
+              name: "photoCaption",
+              label: "Caption on the portrait",
+              widget: "string",
+              required: false,
+            }
+          - { name: "closeHeading", label: "Contact heading", widget: "string" }
+          - {
+              name: "closeHeadingItalic",
+              label: "Contact heading — italic word",
+              widget: "string",
+            }
+          - { name: "email", label: "Email address", widget: "string" }
+          - { name: "linkedin", label: "LinkedIn URL", widget: "string", required: false }
+          - {
+              name: "seoTitle",
+              label: "Browser tab / Google title",
+              widget: "string",
+              hint: "Shows in the browser tab and as the blue link in Google results.",
+            }
+          - {
+              name: "seoDesc",
+              label: "Google description",
+              widget: "text",
+              hint: "The grey text under your link in search results. Aim for about 150 characters.",
+            }
+          - {
+              name: "colorBg",
+              label: "Background colour",
+              widget: "color",
+              hint: "The whole site is mixed from these two colours. Change them and everything recolours.",
+            }
+          - { name: "colorAccent", label: "Accent colour", widget: "color" }
+          - {
+              name: "navItems",
+              label: "Menu links",
+              widget: "list",
+              summary: "{{fields.label}}",
+              fields:
+                [
+                  { name: "label", label: "Menu text", widget: "string" },
+                  {
+                    name: "anchor",
+                    label: "Jumps to",
+                    widget: "select",
+                    options: ["work", "method", "about", "career", "contact"],
+                  },
+                ],
+            }
+          - { name: "workTag", label: "Label above the featured case study", widget: "string" }
+          - { name: "emailLabel", label: "Email button text", widget: "string" }
+          - { name: "linkedinLabel", label: "LinkedIn button text", widget: "string" }
+          - {
+              name: "showStats",
+              label: "Show the numbers row",
+              widget: "boolean",
+              default: true,
+            }
+          - { name: "showMethod", label: "Show the Method section", widget: "boolean", default: true }
+          - { name: "showStatement", label: "Show the big statement line", widget: "boolean", default: true }
+          - { name: "showBio", label: "Show the About section", widget: "boolean", default: true }
+          - { name: "showCareer", label: "Show Work history", widget: "boolean", default: true }
+          - { name: "city", label: "City", widget: "string" }

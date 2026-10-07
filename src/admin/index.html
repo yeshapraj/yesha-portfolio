@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Edit my site</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#2C0A16;
+    --pink:#F4C9DD;
+    --panel:#3D1A27;
+    --line:#4E2A38;
+    --muted:#B08899;
+  }
+  /* login screen */
+  [class*="App__StyledLoginPage"],
+  [class*="LoginPage"]{
+    background:var(--wine) !important;
+  }
+  [class*="LoginPage"] button,
+  [class*="LoginPage"] a[role="button"]{
+    background:var(--pink) !important;
+    color:var(--wine) !important;
+    border-radius:0 !important;
+    letter-spacing:.2em !important;
+    text-transform:uppercase !important;
+    font-size:11px !important;
+  }
+  /* top bar */
+  [class*="AppHeader"]{
+    background:var(--wine) !important;
+    border-bottom:1px solid var(--line) !important;
+  }
+  [class*="AppHeader"] *{ color:var(--pink) !important; }
+  [class*="AppHeaderNavLink"]:hover{ background:var(--panel) !important; }
+  /* primary buttons */
+  [class*="AppHeaderActions"] [class*="Button"],
+  button[class*="PublishButton"]{
+    background:var(--pink) !important;
+    color:var(--wine) !important;
+  }
+</style>
+</head>
+<body>
+<script src="https://unpkg.com/decap-cms@^3.1.10/dist/decap-cms.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var CSS = `
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap');
+    :root{
+      --wine:#2C0A16; --pink:#F4C9DD;
+      --shell:#35131F; --panel:#3D1A27; --line:#4E2A38;
+      --dim:#9C7585; --muted:#B08899; --bright:#FAE7F0;
+      --serif:"Cormorant Garamond",Garamond,serif;
+      --sans:"Jost",system-ui,sans-serif;
+    }
+    body{margin:0;background:var(--wine);color:var(--pink);
+      font-family:var(--sans);font-weight:300;line-height:1.7;font-size:15px;
+      -webkit-font-smoothing:antialiased;padding:34px 30px}
+    .kick{font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin:0 0 20px}
+    h1{font-family:var(--serif);font-weight:300;font-size:52px;line-height:.9;
+      letter-spacing:-.035em;margin:0 0 20px;color:var(--bright)}
+    h1 .sm{display:block;font-size:.42em;color:var(--muted);margin-bottom:.16em;line-height:1.1}
+    h1 .it{font-style:italic;color:var(--pink)}
+    .sub{color:var(--muted);max-width:30em;margin:0 0 28px}
+    .sub b{font-weight:400;color:var(--pink)}
+    .nums{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-bottom:34px}
+    .nums div{padding:16px 14px 18px 0;border-right:1px solid var(--line)}
+    .nums div:last-child{border-right:0}
+    .nums b{display:block;font-family:var(--serif);font-weight:300;font-size:28px;
+      line-height:.9;color:var(--bright)}
+    .nums span{display:block;margin-top:7px;font-size:8.5px;letter-spacing:.2em;
+      text-transform:uppercase;color:var(--dim)}
+    .tag{font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);margin:0 0 16px}
+    h2{font-family:var(--serif);font-weight:300;font-size:38px;line-height:.98;
+      letter-spacing:-.03em;margin:0 0 24px;color:var(--bright)}
+    h2 em{font-style:italic;color:var(--pink)}
+    ul{margin:0;padding:0;list-style:none;max-width:40ch}
+    li{padding:0 0 14px;border-bottom:1px solid var(--line);margin-bottom:14px;
+      color:var(--muted);font-size:14px;line-height:1.6}
+    li:last-child{border-bottom:0}
+    .frame{margin-top:22px;aspect-ratio:16/10;background:var(--panel);
+      border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
+      text-align:center;padding:20px;color:var(--dim);font-size:9.5px;
+      letter-spacing:.22em;text-transform:uppercase;line-height:2.2}
+    .frame img{width:100%;height:100%;object-fit:cover}
+    .row{display:grid;grid-template-columns:44px 1fr;gap:20px;padding:22px 0;
+      border-top:1px solid var(--line)}
+    .k{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--dim)}
+    h3{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.06;
+      letter-spacing:-.02em;margin:0 0 6px;color:var(--bright)}
+    .who{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin:0 0 14px}
+    .say{font-family:var(--serif);font-weight:300;font-size:34px;line-height:1.12;
+      letter-spacing:-.025em;color:var(--bright);max-width:15em;margin:0}
+    .say em{font-style:italic;color:var(--pink)}
+    .job{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:baseline;
+      padding:16px 0;border-top:1px solid var(--line)}
+    .job h4{font-family:var(--serif);font-weight:400;font-size:21px;margin:0;color:var(--bright)}
+    .job small{display:block;font-family:var(--sans);font-size:9px;letter-spacing:.22em;
+      text-transform:uppercase;color:var(--dim);margin-top:5px;font-weight:400}
+    .job time{font-size:11px;letter-spacing:.1em;color:var(--muted);white-space:nowrap}
+    .now:after{content:"Now";font-family:var(--sans);font-size:8px;letter-spacing:.18em;
+      text-transform:uppercase;border:1px solid var(--pink);color:var(--pink);
+      padding:2px 7px;margin-left:11px;vertical-align:4px}
+    .m h4{font-family:var(--serif);font-weight:400;font-size:20px;margin:0 0 6px;color:var(--pink)}
+    .m p{margin:0;color:var(--muted);font-size:14px;max-width:36ch}
+    .m div{padding:18px 0;border-top:1px solid var(--line)}
+    .hint{color:var(--dim);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+      border:1px dashed var(--line);padding:14px;text-align:center;margin-top:20px}
+  `;
+
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  function italicise(text, word) {
+    var t = esc(text);
+    if (!word) return t;
+    var w = esc(word);
+    return t.split(w).join('<em>' + w + '</em>');
+  }
+  function markBold(text, word) {
+    var t = esc(text);
+    if (!word) return t;
+    var w = esc(word);
+    return t.split(w).join('<b>' + w + '</b>');
+  }
+  function list(v) {
+    if (!v) return [];
+    return v.toJS ? v.toJS() : v;
+  }
+
+  // ── case study preview ──────────────────────────────
+  var Project = window.createClass({
+    render: function () {
+      var e = window.h;
+      var d = this.props.entry.get('data');
+      var img = this.props.getAsset(d.get('image'));
+      var pts = list(d.get('points'));
+      var featured = Number(d.get('order')) === 1;
+
+      var bullets = pts.map(function (p, i) {
+        return e('li', { key: i }, p && p.text ? p.text : '');
+      });
+
+      if (featured) {
+        return e('div', {},
+          e('style', {}, CSS),
+          e('p', { className: 'tag' },
+            'Selected work — ' + String(d.get('order') || 1).padStart(2, '0')),
+          e('h2', {
+            dangerouslySetInnerHTML: {
+              __html: italicise(d.get('title') || 'Untitled', d.get('titleItalic'))
+            }
+          }),
+          e('ul', {}, bullets),
+          e('div', { className: 'frame' },
+            img && img.toString()
+              ? e('img', { src: img.toString() })
+              : (d.get('caption') || 'Screenshot goes here'))
+        );
+      }
+
+      return e('div', {},
+        e('style', {}, CSS),
+        e('div', { className: 'row' },
+          e('div', { className: 'k' }, String(d.get('order') || 2).padStart(2, '0')),
+          e('div', {},
+            e('h3', {}, d.get('title') || 'Untitled'),
+            e('p', { className: 'who' }, d.get('client') || ''),
+            e('ul', {}, bullets))),
+        e('div', { className: 'hint' },
+          'Set Position to 1 to make this the featured case study')
+      );
+    }
+  });
+
+  // ── work history preview ────────────────────────────
+  var Role = window.createClass({
+    render: function () {
+      var e = window.h;
+      var d = this.props.entry.get('data');
+      return e('div', {},
+        e('style', {}, CSS),
+        e('div', { className: 'job' },
+          e('h4', { className: d.get('current') ? 'now' : '' },
+            d.get('title') || 'Job title',
+            e('small', {}, d.get('company') || 'Company')),
+          e('time', {}, d.get('dates') || 'Dates')));
+    }
+  });
+
+  // ── method step preview ─────────────────────────────
+  var Method = window.createClass({
+    render: function () {
+      var e = window.h;
+      var d = this.props.entry.get('data');
+      return e('div', { className: 'm' },
+        e('style', {}, CSS),
+        e('div', {},
+          e('h4', {}, d.get('title') || 'Step name'),
+          e('p', {}, d.get('body') || '')));
+    }
+  });
+
+  // ── whole-page preview ──────────────────────────────
+  var Site = window.createClass({
+    render: function () {
+      var e = window.h;
+      var d = this.props.entry.get('data');
+      var photo = this.props.getAsset(d.get('photo'));
+
+      var stats = list(d.get('stats')).map(function (s, i) {
+        return e('div', { key: i },
+          e('b', {}, s.figure || '0'),
+          e('span', {}, s.label || ''));
+      });
+
+      var bio = list(d.get('bio')).map(function (b, i) {
+        return e('p', { key: i, className: 'sub' }, b.text || '');
+      });
+
+      return e('div', {},
+        e('style', {}, CSS),
+        e('p', { className: 'kick' }, d.get('kicker') || ''),
+        e('h1', {},
+          e('span', { className: 'sm' }, d.get('headSmall') || ''),
+          e('span', {
+            dangerouslySetInnerHTML: {
+              __html: (function () {
+                var l2 = esc(d.get('headLine2') || '');
+                var it = d.get('headLine2Italic');
+                if (it) l2 = l2.split(esc(it)).join('<span class="it">' + esc(it) + '</span>');
+                return l2 + '<br>' + esc(d.get('headLine3') || '');
+              }())
+            }
+          })),
+        e('p', {
+          className: 'sub',
+          dangerouslySetInnerHTML: {
+            __html: markBold(d.get('sub') || '', d.get('subBold'))
+          }
+        }),
+        d.get('showStats') === false ? null : e('div', { className: 'nums' }, stats),
+        d.get('showStatement') === false ? null : e('p', {
+          className: 'say',
+          dangerouslySetInnerHTML: {
+            __html: esc(d.get('statement') || '') +
+              ' <em>' + esc(d.get('statementItalic') || '') + '</em>.'
+          }
+        }),
+        d.get('showBio') === false ? null : e('div', { style: { marginTop: '30px' } }, bio),
+        photo && photo.toString()
+          ? e('div', { className: 'frame', style: { maxWidth: '220px', aspectRatio: '4/5' } },
+              e('img', { src: photo.toString() }))
+          : null
+      );
+    }
+  });
+
+  window.CMS.registerPreviewTemplate('projects', Project);
+  window.CMS.registerPreviewTemplate('roles', Role);
+  window.CMS.registerPreviewTemplate('method', Method);
+  window.CMS.registerPreviewTemplate('settings', Site);
+}());
+</script>
+</body>
+</html>

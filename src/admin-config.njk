@@ -1,0 +1,13 @@
+---
+permalink: /admin/config.yml
+eleventyExcludeFromCollections: true
+---
+{% if repo.detected %}# Repo filled in automatically by the Netlify build.
+{% else %}# REPOSITORY_URL was not set for this build (normal when building locally).
+# On Netlify this fills itself in.
+{% endif %}backend:
+  name: github
+  repo: {{ repo.slug if repo.detected else "REPLACE-ME/REPLACE-ME" }}
+  branch: {{ repo.branch }}
+
+{{ cmsRest | safe }}
