@@ -33,11 +33,17 @@ eleventyComputed:
       {% if p.data.scope %}<div><span>Scope</span><span>{{ p.data.scope }}</span></div>{% endif %}
     </div>
 
-    {% if p.data.image %}
-    <div class="cp-hero">
-      <img src="{{ p.data.image }}" alt="{{ p.data.title }}">
+    <div class="cp-hero{% if not p.data.image %} plate{% endif %}" data-reveal>
+      {% if p.data.image %}<img src="{{ p.data.image }}" alt="{{ p.data.title }}">
+      {% else %}
+      <div class="plate-in">
+        <span class="plate-n">{{ p.data.order | pad }}</span>
+        <span class="plate-c">{{ p.data.client }}</span>
+        <span class="plate-t">{{ p.data.title }}</span>
+        {% if p.data.scope %}<span class="plate-s">{{ p.data.scope }}</span>{% endif %}
+      </div>
+      {% endif %}
     </div>
-    {% endif %}
 
     <div class="cp-body{% if not p.templateContent %} solo{% endif %}">
       <div>

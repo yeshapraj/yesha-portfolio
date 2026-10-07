@@ -56,15 +56,15 @@ img{max-width:100%;height:auto;display:block}
 
 
 /* ── nav ─────────────────────────────── */
-nav{position:fixed;inset:0 0 auto;z-index:60;padding:28px 0;
+#nav{position:fixed;inset:0 0 auto;z-index:60;padding:28px 0;
   transition:background .45s var(--e),box-shadow .45s var(--e);
   will-change:background}
-nav .w{transition:transform .45s var(--e);transform-origin:left center}
-nav.on .w{transform:scale(.94)}
-nav::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+#nav .w{transition:transform .45s var(--e);transform-origin:left center}
+#nav.on .w{transform:scale(.94)}
+#nav::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:linear-gradient(to bottom,var(--wine) 0%,rgba(44,10,22,.92) 55%,rgba(44,10,22,0) 100%)}
-nav.on{background:rgba(44,10,22,.94);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--line)}
-nav .w{display:flex;align-items:center;justify-content:space-between;gap:24px}
+#nav.on{background:rgba(44,10,22,.94);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--line)}
+#nav .w{display:flex;align-items:center;justify-content:space-between;gap:24px}
 .mark{font-family:var(--serif);font-size:21px;letter-spacing:.01em;text-decoration:none;white-space:nowrap}
 .mark i{font-style:italic;color:var(--muted)}
 .nl{display:none;gap:30px}
@@ -297,10 +297,10 @@ body.locked{overflow:hidden}
   font-size:clamp(38px,7.6vw,104px);line-height:.95;letter-spacing:-.034em;
   color:var(--bright);max-width:14em}
 .cp-title em{font-style:italic;color:var(--pink)}
-.cp-meta{display:flex;gap:0;flex-wrap:wrap;border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);margin-bottom:62px}
-.cp-meta div{padding:16px 20px 18px 0;margin-right:20px;border-right:1px solid var(--line)}
+.cp-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,auto));justify-content:start;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:62px}
+.cp-meta div{padding:16px 24px 18px 0;margin-right:24px;border-right:1px solid var(--line)}
 .cp-meta div:last-child{border-right:0;margin-right:0}
+@supports(selector(:has(*))){.cp-meta div:nth-last-child(1){border-right:0}}
 .cp-meta span:first-child{display:block;font-size:9.5px;letter-spacing:.24em;
   text-transform:uppercase;color:var(--dim);margin-bottom:7px}
 .cp-meta span:last-child{font-size:16px;color:var(--pink)}
@@ -354,6 +354,46 @@ body.locked{overflow:hidden}
 .more:after{content:"\2192";transition:transform .45s var(--e)}
 .more:hover{border-bottom-color:var(--pink)}
 .more:hover:after{transform:translate3d(6px,0,0)}
+
+
+/* ── designed placeholder panel ─────── */
+.cp-hero.plate{background:var(--shell);border:1px solid var(--line);
+  aspect-ratio:16/9;display:flex;align-items:flex-end;position:relative;overflow:hidden}
+.cp-hero.plate::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    repeating-linear-gradient(90deg,transparent 0 var(--c),var(--line) var(--c),var(--line) calc(var(--c) + 1px));
+  --c:12.5%;opacity:.5}
+.plate-in{position:relative;z-index:2;padding:clamp(22px,4vw,54px);width:100%;
+  display:grid;gap:10px}
+.plate-n{font-family:var(--serif);font-style:italic;font-size:clamp(44px,9vw,120px);
+  line-height:.8;color:var(--pink);opacity:.5}
+.plate-c{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--dim)}
+.plate-t{font-family:var(--serif);font-weight:300;font-size:clamp(20px,2.6vw,34px);
+  line-height:1.1;color:var(--bright);max-width:22ch}
+.plate-s{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* ── scroll reveal: clip wipe ───────── */
+[data-reveal]{clip-path:inset(0 0 100% 0);transition:clip-path 1.05s var(--e)}
+[data-reveal].shown{clip-path:inset(0 0 0 0)}
+
+/* ── custom cursor ──────────────────── */
+.cur{position:fixed;top:0;left:0;width:11px;height:11px;border-radius:50%;
+  background:var(--pink);pointer-events:none;z-index:200;opacity:0;
+  transform:translate3d(-50%,-50%,0);
+  transition:opacity .3s var(--e),width .35s var(--e),height .35s var(--e),background .35s var(--e)}
+.cur.on{opacity:1}
+.cur.big{width:46px;height:46px;background:rgba(244,201,221,.16)}
+.cur-ring{position:fixed;top:0;left:0;width:30px;height:30px;border-radius:50%;
+  border:1px solid rgba(244,201,221,.4);pointer-events:none;z-index:199;opacity:0;
+  transform:translate3d(-50%,-50%,0);transition:opacity .3s var(--e)}
+.cur-ring.on{opacity:1}
+@media(hover:none),(pointer:coarse){.cur,.cur-ring{display:none}}
+
+/* ── page transition ────────────────── */
+.wipe{position:fixed;inset:0;z-index:300;background:var(--wine);
+  transform:translate3d(0,100%,0);pointer-events:none}
+.wipe.in{transform:translate3d(0,0,0);transition:transform .55s var(--e)}
+.wipe.out{transform:translate3d(0,-100%,0);transition:transform .6s var(--e)}
 
 /* ── reveal ──────────────────────────── */
 .rv{opacity:0;transform:translate3d(0,26px,0);transition:opacity .9s var(--e),transform .9s var(--e);will-change:opacity,transform}
@@ -468,6 +508,10 @@ a:focus-visible{outline:2px solid var(--pink);outline-offset:5px}
   </div>
 </nav>
 
+<div class="wipe" id="wipe"></div>
+<div class="cur" id="cur"></div>
+<div class="cur-ring" id="curRing"></div>
+
 <div class="nmenu" id="nmenu" hidden>
   <div class="w">
     {% for n in site.navItems %}<a href="{{ '/' | url }}#{{ n.anchor }}" style="--i:{{ loop.index0 }}">{{ n.label }}</a>
@@ -485,9 +529,8 @@ a:focus-visible{outline:2px solid var(--pink);outline-offset:5px}
       {% if site.linkedin %}<a class="btn" href="{{ site.linkedin }}"><span>{{ site.linkedinLabel }}</span></a>{% endif %}
     </div>
     <div class="foot">
-      <span>{{ site.name }}</span>
+      <span>&copy; <i id="y">2026</i> {{ site.name }}</span>
       <span>{{ site.city }}</span>
-      <span>&copy; <i id="y">2026</i></span>
       <span class="by">Designed by <a href="https://hinali.com" rel="noopener">Hinali Shah</a></span>
     </div>
   </div>
@@ -580,6 +623,73 @@ a:focus-visible{outline:2px solid var(--pink);outline-offset:5px}
   }, { passive: true });
   window.addEventListener('resize', run, { passive: true });
   run();
+
+  // ---- clip-wipe reveals ----
+  // clip-path hides the node from IntersectionObserver, so watch its parent
+  var rv = document.querySelectorAll('[data-reveal]');
+  if (rv.length) {
+    var pairs = [];
+    rv.forEach(function (n) { if (n.parentElement) pairs.push([n.parentElement, n]); });
+    var rio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        pairs.forEach(function (p) { if (p[0] === e.target) p[1].classList.add('shown'); });
+        rio.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+    pairs.forEach(function (p) { rio.observe(p[0]); });
+  }
+
+  // ---- custom cursor ----
+  var cur = document.getElementById('cur');
+  var ring = document.getElementById('curRing');
+  if (cur && ring && window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+    var cx = 0, cy = 0, rx = 0, ry = 0, raf = null;
+    var loop = function () {
+      rx += (cx - rx) * 0.16;
+      ry += (cy - ry) * 0.16;
+      ring.style.transform = 'translate3d(' + rx + 'px,' + ry + 'px,0) translate(-50%,-50%)';
+      raf = requestAnimationFrame(loop);
+    };
+    document.addEventListener('mousemove', function (e) {
+      cx = e.clientX; cy = e.clientY;
+      cur.style.transform = 'translate3d(' + cx + 'px,' + cy + 'px,0) translate(-50%,-50%)';
+      if (!cur.classList.contains('on')) {
+        cur.classList.add('on'); ring.classList.add('on');
+        if (!raf) loop();
+      }
+    }, { passive: true });
+    document.addEventListener('mouseleave', function () {
+      cur.classList.remove('on'); ring.classList.remove('on');
+    });
+    var hot = 'a, button, .w-item, .cp-link';
+    document.addEventListener('mouseover', function (e) {
+      if (e.target.closest(hot)) cur.classList.add('big');
+    });
+    document.addEventListener('mouseout', function (e) {
+      if (e.target.closest(hot)) cur.classList.remove('big');
+    });
+  }
+
+  // ---- page transition ----
+  var wipe = document.getElementById('wipe');
+  if (wipe) {
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href');
+      if (!href || href.charAt(0) === '#' || a.target === '_blank') return;
+      if (href.indexOf('mailto:') === 0 || href.indexOf('http') === 0) return;
+      e.preventDefault();
+      wipe.classList.add('in');
+      setTimeout(function () { window.location.href = href; }, 480);
+    });
+    window.addEventListener('pageshow', function () {
+      wipe.classList.remove('in');
+      wipe.classList.add('out');
+      setTimeout(function () { wipe.classList.remove('out'); }, 650);
+    });
+  }
 }());
 </script>
 </body>
