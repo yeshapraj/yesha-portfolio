@@ -1,4 +1,4 @@
-# Yesha's site — setup
+# Yesha's site: setup
 
 Nothing to fill in by hand. The site works out the GitHub repo by itself during
 the Netlify build, so you can go straight to uploading.
@@ -66,7 +66,7 @@ Two halves. Both required, and the callback URL is the bit people get wrong.
 
 3. **Register application**
 4. Copy the **Client ID**
-5. **Generate a new client secret**, copy that too — it's only shown once
+5. **Generate a new client secret**, copy that too, it's only shown once
 
 ### On Netlify
 
@@ -98,7 +98,7 @@ Netlify sets an environment variable called `REPOSITORY_URL` on every build.
 
 Two consequences worth knowing:
 
-- Nobody types a username anywhere. Fork the repo, move it, rename it — the
+- Nobody types a username anywhere. Fork the repo, move it, rename it. The
   config follows.
 - Building locally has no `REPOSITORY_URL`, so the generated config says
   `REPLACE-ME/REPLACE-ME`. That's expected. The admin login only works on the
@@ -108,8 +108,8 @@ Two consequences worth knowing:
 
 ## The admin panel
 
-Styled in her colours — wine background, pink buttons, Cormorant on the login
-screen. Not default grey.
+Styled in her colours: burgundy background, blush buttons, Cormorant on the
+login screen. Not default grey.
 
 **Every collection has a live preview.** The right-hand pane shows the real
 design as she types: correct fonts, colours and layout. A case study set to
@@ -123,18 +123,18 @@ compact row, with a note explaining how to promote it.
 | Case studies | ✓ | ✓ | ✓ | position number |
 | Method steps | ✓ | ✓ | ✓ | position number |
 | Work history | ✓ | ✓ | ✓ | position number |
-| Page content | — | ✓ | — | — |
+| Page content | no | yes | no | no |
 
 **Page content** covers the headline, the numbers row, menu links, button
 labels, the big statement line, about paragraphs, portrait, Google title and
-description, section on/off switches, and the two colours.
+description, section on/off switches, and the three colours.
 
-**The colours are the powerful one.** The whole site is mixed from exactly two
-values — a background and an accent. Change those two in the admin and every
+**The colours are the powerful one.** The whole site is mixed from three
+values: burgundy, navy and blush. Change those in the admin and every
 other tone (borders, muted text, panels, hovers) recalculates from them. A full
 retheme in ten seconds, no code.
 
-She hits **Publish**, Netlify rebuilds, live in about a minute. Not instant —
+She hits **Publish**, Netlify rebuilds, live in about a minute. Not instant, so
 tell her, so she doesn't press it repeatedly.
 
 ---
@@ -145,7 +145,7 @@ The site is no longer one page.
 
 | URL | What it is |
 |---|---|
-| `/` | Home — hero, work list, method, about, career, contact |
+| `/` | Home: hero, work list, method, about, career, contact |
 | `/work/<project>/` | One page per case study, generated automatically |
 
 Add a case study in the admin and its page appears on the next build. Delete
@@ -155,7 +155,7 @@ Each case study page has:
 
 - the fact strip (client, year, scope)
 - the bullet points from the home page
-- a **Full write-up** field — a proper text editor with headings, bold, quotes
+- a **Full write-up** field, a proper text editor with headings, bold, quotes
 - a **More images** gallery, two per row
 - previous / next links to the neighbouring projects
 
@@ -204,5 +204,6 @@ Runs at `localhost:8080`.
 | Admin fields | `src/_collections.yml` |
 | Admin panel + previews | `src/admin/index.html` |
 
-The palette is two values at the top of the stylesheet — `--wine` and `--pink`.
-Every other tone is a `color-mix` of those two.
+The palette is three values at the top of the stylesheet: `--wine` (burgundy
+background), `--navy` (the accent) and `--pink` (the blush that every light type
+tone is mixed from). Every other tone is a `color-mix` of those.
