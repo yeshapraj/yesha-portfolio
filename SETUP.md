@@ -139,6 +139,31 @@ tell her, so she doesn't press it repeatedly.
 
 ---
 
+## Pages
+
+The site is no longer one page.
+
+| URL | What it is |
+|---|---|
+| `/` | Home — hero, work list, method, about, career, contact |
+| `/work/<project>/` | One page per case study, generated automatically |
+
+Add a case study in the admin and its page appears on the next build. Delete
+one and the page goes. Nothing to wire up.
+
+Each case study page has:
+
+- the fact strip (client, year, scope)
+- the bullet points from the home page
+- a **Full write-up** field — a proper text editor with headings, bold, quotes
+- a **More images** gallery, two per row
+- previous / next links to the neighbouring projects
+
+The home page shows the bullets and links through. The long version lives on
+the project's own page, so the front page stays short.
+
+---
+
 ## The two images
 
 The portrait, and the wide screenshot on the featured case study. Both are

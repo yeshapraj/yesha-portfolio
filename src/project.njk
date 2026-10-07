@@ -1,0 +1,94 @@
+---
+layout: base.njk
+pagination:
+  data: collections.projects
+  size: 1
+  alias: p
+permalink: "/work/{{ p.fileSlug | slugify }}/"
+eleventyComputed:
+  title: "{{ p.data.title }}"
+  description: "{{ p.data.client }} — {{ p.data.points[0].text if p.data.points }}"
+---
+
+<article class="case-page">
+  <div class="w">
+
+    <a class="back" href="{{ '/' | url }}#work">
+      <span class="arr">&larr;</span> All work
+    </a>
+
+    <p class="cp-num">{{ p.data.order | pad }}</p>
+
+    <h1 class="cp-title">
+      {%- if p.data.titleItalic -%}
+        {{ p.data.title | replace(p.data.titleItalic, '<em>' + p.data.titleItalic + '</em>') | safe }}
+      {%- else -%}
+        {{ p.data.title }}
+      {%- endif -%}
+    </h1>
+
+    <div class="cp-meta">
+      <div><span>Client</span><span>{{ p.data.client }}</span></div>
+      {% if p.data.year %}<div><span>Year</span><span>{{ p.data.year }}</span></div>{% endif %}
+      {% if p.data.scope %}<div><span>Scope</span><span>{{ p.data.scope }}</span></div>{% endif %}
+    </div>
+
+    {% if p.data.image %}
+    <div class="cp-hero">
+      <img src="{{ p.data.image }}" alt="{{ p.data.title }}">
+    </div>
+    {% endif %}
+
+    <div class="cp-body">
+      <div>
+        <p class="label">What I did</p>
+        <ul class="cp-points">
+          {% for pt in p.data.points %}<li>{{ pt.text }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="cp-prose">
+        {% if p.templateContent %}{{ p.templateContent | safe }}
+        {% else %}<p class="cp-empty">Add the longer write-up for this project in the admin — the main text box under the bullet points.</p>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if p.data.gallery and p.data.gallery.length %}
+    <div class="cp-gallery">
+      {% for g in p.data.gallery %}
+      <figure>
+        <img src="{{ g.image }}" alt="{{ g.caption or p.data.title }}" loading="lazy">
+        {% if g.caption %}<figcaption>{{ g.caption }}</figcaption>{% endif %}
+      </figure>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <nav class="cp-nav">
+      {% set prev = false %}{% set next = false %}
+      {% for q in collections.projects %}
+        {% if q.fileSlug == p.fileSlug %}
+          {% if not loop.first %}{% set prev = collections.projects[loop.index0 - 1] %}{% endif %}
+          {% if not loop.last %}{% set next = collections.projects[loop.index0 + 1] %}{% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {% if prev %}
+      <a class="cp-link prev" href="{{ '/work/' + (prev.fileSlug | slugify) + '/' | url }}">
+        <span class="lbl">Previous</span>
+        <span class="ttl">{{ prev.data.title }}</span>
+      </a>
+      {% else %}<span></span>{% endif %}
+
+      {% if next %}
+      <a class="cp-link next" href="{{ '/work/' + (next.fileSlug | slugify) + '/' | url }}">
+        <span class="lbl">Next</span>
+        <span class="ttl">{{ next.data.title }}</span>
+      </a>
+      {% endif %}
+    </nav>
+
+  </div>
+</article>

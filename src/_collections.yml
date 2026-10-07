@@ -61,7 +61,40 @@ collections:
           required: false,
           hint: "Shown in the empty frame until you upload a screenshot.",
         }
-      - { name: "body", label: "", widget: "hidden", default: "" }
+      - {
+          name: "year",
+          label: "Year",
+          widget: "string",
+          required: false,
+          hint: "Shown in the detail page's fact strip. e.g. 2025",
+        }
+      - {
+          name: "scope",
+          label: "Scope",
+          widget: "string",
+          required: false,
+          hint: "A few words. e.g. Campaigns, CRM, brand systems",
+        }
+      - {
+          name: "gallery",
+          label: "More images",
+          widget: "list",
+          required: false,
+          summary: "{{fields.caption}}",
+          hint: "Extra screenshots for this project's own page. Two per row.",
+          fields:
+            [
+              { name: "image", label: "Image", widget: "image" },
+              { name: "caption", label: "Caption", widget: "string", required: false },
+            ],
+        }
+      - {
+          name: "body",
+          label: "Full write-up",
+          widget: "markdown",
+          required: false,
+          hint: "The longer story, shown only on this project's own page. Headings, bold and quotes all work.",
+        }
 
   # ── Method ─────────────────────────────────────────────
   - name: "method"
