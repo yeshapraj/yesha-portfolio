@@ -39,20 +39,16 @@ eleventyComputed:
     </div>
     {% endif %}
 
-    <div class="cp-body">
+    <div class="cp-body{% if not p.templateContent %} solo{% endif %}">
       <div>
-        <p class="label">What I did</p>
+        <p class="cp-lbl">What I did</p>
         <ul class="cp-points">
           {% for pt in p.data.points %}<li>{{ pt.text }}</li>
           {% endfor %}
         </ul>
       </div>
 
-      <div class="cp-prose">
-        {% if p.templateContent %}{{ p.templateContent | safe }}
-        {% else %}<p class="cp-empty">Add the longer write-up for this project in the admin — the main text box under the bullet points.</p>
-        {% endif %}
-      </div>
+      {% if p.templateContent %}<div class="cp-prose">{{ p.templateContent | safe }}</div>{% endif %}
     </div>
 
     {% if p.data.gallery and p.data.gallery.length %}

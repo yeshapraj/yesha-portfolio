@@ -32,6 +32,20 @@ collections:
         }
       - { name: "client", label: "Client or company", widget: "string" }
       - {
+          name: "summary",
+          label: "One line for the home page",
+          widget: "text",
+          required: false,
+          hint: "Shown in the work list on the front page. Leave blank and it uses the first bullet.",
+        }
+      - {
+          name: "group",
+          label: "Group heading",
+          widget: "string",
+          required: false,
+          hint: "Projects sharing a heading are listed together on the home page, e.g. Archer Lewis. Leave blank for no heading.",
+        }
+      - {
           name: "order",
           label: "Position",
           widget: "number",
@@ -109,6 +123,13 @@ collections:
     fields:
       - { name: "title", label: "Step name", widget: "string" }
       - {
+          name: "group",
+          label: "Group heading",
+          widget: "string",
+          required: false,
+          hint: "Projects sharing a heading are listed together on the home page, e.g. Archer Lewis. Leave blank for no heading.",
+        }
+      - {
           name: "order",
           label: "Position",
           widget: "number",
@@ -140,6 +161,13 @@ collections:
           label: "Dates",
           widget: "string",
           hint: "e.g. March 2025 — Present",
+        }
+      - {
+          name: "group",
+          label: "Group heading",
+          widget: "string",
+          required: false,
+          hint: "Projects sharing a heading are listed together on the home page, e.g. Archer Lewis. Leave blank for no heading.",
         }
       - {
           name: "order",

@@ -21,35 +21,27 @@ permalink: /index.html
 
 <section id="work">
   <div class="w">
-    {% for p in collections.projects %}{% if loop.first %}
-    <article class="lead-case">
-      <p class="tag rv">{{ site.workTag }} — {{ p.data.order | pad }}</p>
-      <h2 class="rv"><a class="case-a" href="{{ '/work/' + (p.fileSlug | slugify) + '/' | url }}">{{ p.data.title | replace(p.data.titleItalic, '<em>' + p.data.titleItalic + '</em>') | safe if p.data.titleItalic else p.data.title }}</a></h2>
-      <div class="lead-grid">
-        <ul class="rv b">
-          {% for pt in p.data.points %}<li>{{ pt.text }}</li>
-          {% endfor %}
-        </ul>
-        <div class="wide rv b">
-          {% if p.data.image %}<img src="{{ p.data.image }}" alt="{{ p.data.title }}" data-p>
-          {% else %}<span data-p>{{ p.data.caption }}</span>{% endif %}
-        </div>
-      </div>
-      <p class="rv b"><a class="more" href="{{ '/work/' + (p.fileSlug | slugify) + '/' | url }}"><span>Read the full case study</span></a></p>
-    </article>
-    {% else %}
-    <article class="row rv">
-      <div class="k">{{ p.data.order | pad }}</div>
-      <div>
-        <h3><a class="case-a" href="{{ '/work/' + (p.fileSlug | slugify) + '/' | url }}">{{ p.data.title }}</a></h3>
-        <p class="who">{{ p.data.client }}</p>
-      </div>
-      <ul>
-        {% for pt in p.data.points %}<li>{{ pt.text }}</li>
-        {% endfor %}
-      </ul>
-    </article>
-    {% endif %}{% endfor %}
+    <p class="w-eyebrow rv">{{ site.workTag }}</p>
+    <h2 class="w-head rv">Three things <em>I built</em>.</h2>
+
+    <div class="w-list">
+      {% set lastGroup = "" %}
+      {% for p in collections.projects %}
+      {% if p.data.group and p.data.group != lastGroup %}
+      <p class="w-group">{{ p.data.group }}</p>
+      {% set lastGroup = p.data.group %}
+      {% endif %}
+      <a class="w-item rv" href="{{ '/work/' + (p.fileSlug | slugify) + '/' | url }}">
+        <span class="w-n">{{ p.data.order | pad }}</span>
+        <span class="w-mid">
+          <span class="w-title">{{ p.data.title }}</span>
+          <span class="w-sum">{{ p.data.summary if p.data.summary else p.data.points[0].text }}</span>
+        </span>
+        <span class="w-client">{{ p.data.client }}</span>
+        <span class="w-go" aria-hidden="true">&rarr;</span>
+      </a>
+      {% endfor %}
+    </div>
   </div>
 </section>
 

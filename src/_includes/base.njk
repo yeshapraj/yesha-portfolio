@@ -224,6 +224,46 @@ h1 .it{font-style:italic;color:var(--pink)}
 
 
 
+
+/* ── home: work index ───────────────── */
+.w-eyebrow{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--dim);margin:0 0 20px}
+.w-head{font-family:var(--serif);font-weight:300;font-size:clamp(34px,6vw,76px);
+  line-height:.98;letter-spacing:-.03em;margin:0 0 54px;color:var(--bright)}
+.w-head em{font-style:italic;color:var(--pink)}
+.w-list{border-top:1px solid var(--line)}
+.w-group{font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--pink);
+  margin:0;padding:34px 0 14px;border-bottom:1px solid var(--line)}
+.w-group:first-child{padding-top:22px}
+.w-item{
+  display:grid;grid-template-columns:62px minmax(0,1fr) minmax(0,200px) 40px;
+  gap:28px;align-items:center;padding:36px 0;border-bottom:1px solid var(--line);
+  text-decoration:none;position:relative;transition:padding-left .5s var(--e);
+}
+.w-item::before{
+  content:"";position:absolute;inset:0 -24px;background:var(--shell);
+  opacity:0;transition:opacity .5s var(--e);z-index:-1;
+}
+.w-item:hover{padding-left:16px}
+.w-item:hover::before{opacity:1}
+.w-n{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--dim);
+  line-height:1;transition:color .45s var(--e)}
+.w-item:hover .w-n{color:var(--pink)}
+.w-title{display:block;font-family:var(--serif);font-weight:400;
+  font-size:clamp(23px,3vw,34px);line-height:1.08;letter-spacing:-.022em;
+  color:var(--bright);transition:color .45s var(--e)}
+.w-item:hover .w-title{color:var(--pink)}
+.w-sum{display:block;margin-top:9px;font-size:15px;line-height:1.6;
+  color:var(--muted);max-width:52ch}
+.w-client{font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--dim);text-align:right}
+.w-go{font-size:19px;color:var(--dim);text-align:right;
+  transition:transform .45s var(--e),color .45s var(--e)}
+.w-item:hover .w-go{transform:translateX(7px);color:var(--pink)}
+@media(max-width:880px){
+  .w-item{grid-template-columns:44px minmax(0,1fr) 30px;gap:18px;padding:28px 0}
+  .w-client{display:none}
+}
+
 /* ── case study page ────────────────── */
 .case-page{padding:150px 0 90px}
 .back{display:inline-flex;align-items:center;gap:10px;text-decoration:none;
@@ -249,6 +289,10 @@ h1 .it{font-style:italic;color:var(--pink)}
 .cp-hero img{width:100%;height:auto;display:block}
 .cp-body{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
   gap:76px;align-items:start;margin-bottom:70px}
+.cp-body.solo{grid-template-columns:minmax(0,1fr);max-width:62ch}
+.cp-body.solo .cp-points li{font-size:16.5px}
+.cp-lbl{font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--dim);margin:0 0 20px}
 .cp-points{margin:0;padding:0;list-style:none}
 .cp-points li{padding:0 0 16px;border-bottom:1px solid var(--line);margin-bottom:16px;
   color:var(--muted);font-size:15.5px;line-height:1.66}
@@ -265,7 +309,6 @@ h1 .it{font-style:italic;color:var(--pink)}
   font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.45;color:var(--bright)}
 .cp-prose ul,.cp-prose ol{margin:0 0 20px;padding-left:20px}
 .cp-prose li{padding-bottom:9px}
-.cp-empty{color:var(--dim);font-style:italic}
 .cp-gallery{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:76px}
 .cp-gallery figure{margin:0}
 .cp-gallery img{width:100%;border:1px solid var(--line);background:var(--panel);display:block}
@@ -352,7 +395,8 @@ a:focus-visible{outline:2px solid var(--pink);outline-offset:5px}
 (function () {
   'use strict';
   var slow = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  document.getElementById('y').textContent = new Date().getFullYear();
+  var yr = document.getElementById('y');
+  if (yr) yr.textContent = new Date().getFullYear();
 
   var say = document.getElementById('say');
   var nav = document.getElementById('nav');
@@ -365,12 +409,14 @@ a:focus-visible{outline:2px solid var(--pink);outline-offset:5px}
 
   requestAnimationFrame(function () { document.body.classList.add('go'); });
 
-  say.innerHTML = say.innerHTML.replace(/(<em>)?([^<\s]+)/g, function (m, em, word) {
-    return (em || '') + '<span class="wd">' + word + '</span>';
-  });
-  say.querySelectorAll('.wd').forEach(function (s, i) {
-    s.style.transitionDelay = (i * 44) + 'ms';
-  });
+  if (say) {
+    say.innerHTML = say.innerHTML.replace(/(<em>)?([^<\s]+)/g, function (m, em, word) {
+      return (em || '') + '<span class="wd">' + word + '</span>';
+    });
+    say.querySelectorAll('.wd').forEach(function (s, i) {
+      s.style.transitionDelay = (i * 44) + 'ms';
+    });
+  }
 
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (e) {
@@ -382,13 +428,13 @@ a:focus-visible{outline:2px solid var(--pink);outline-offset:5px}
   }, { rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
 
   document.querySelectorAll('.rv').forEach(function (n) { io.observe(n); });
-  io.observe(say);
+  if (say) io.observe(say);
 
   var par = document.querySelectorAll('[data-p]');
   var tick = false;
   function run() {
     tick = false;
-    nav.classList.toggle('on', window.scrollY > 90);
+    if (nav) nav.classList.toggle('on', window.scrollY > 90);
     var vh = window.innerHeight;
     par.forEach(function (p) {
       var r = p.parentNode.getBoundingClientRect();
