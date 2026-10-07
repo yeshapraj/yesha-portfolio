@@ -313,6 +313,12 @@ collections:
               widget: "color",
               hint: "The whole site is mixed from these two colours. Change them and everything recolours.",
             }
+          - {
+              name: "colorNavy",
+              label: "Secondary surface colour",
+              widget: "color",
+              hint: "Navy. Used for the About band, Method section, footer and image panels.",
+            }
           - { name: "colorAccent", label: "Accent colour", widget: "color" }
           - {
               name: "navItems",

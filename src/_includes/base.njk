@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.className+=' js';</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% if title %}{{ title }}, {{ site.name }}{% else %}{{ site.seoTitle }}{% endif %}</title>
@@ -18,23 +19,24 @@
     --pink  everything that sits on it                       */
 :root{
   --wine:{{ site.colorBg }};
+  --navy:{{ site.colorNavy }};
   --pink:{{ site.colorAccent }};
 
-  --shell:#35131F;
-  --panel:#3D1A27;
-  --line:#4E2A38;
-  --dim:#9C7585;
-  --muted:#B08899;
-  --bright:#FAE7F0;
+  --shell:#2B1628;
+  --panel:#101C33;
+  --line:#5C2D3A;
+  --dim:#B8949F;
+  --muted:#C6A3AD;
+  --bright:#F4EAEC;
 }
 @supports (color: color-mix(in srgb, red, blue)){
 :root{
-  --shell:color-mix(in srgb, var(--pink) 5%, var(--wine));
-  --panel:color-mix(in srgb, var(--pink) 9%, var(--wine));
-  --line:color-mix(in srgb, var(--pink) 17%, var(--wine));
-  --dim:color-mix(in srgb, var(--pink) 56%, var(--wine));
-  --muted:color-mix(in srgb, var(--pink) 66%, var(--wine));
-  --bright:color-mix(in srgb, #FFFFFF 55%, var(--pink));
+  --shell:color-mix(in srgb, var(--navy) 55%, var(--wine));
+  --panel:var(--navy);
+  --line:color-mix(in srgb, var(--pink) 16%, var(--wine));
+  --dim:color-mix(in srgb, var(--pink) 72%, var(--wine));
+  --muted:color-mix(in srgb, var(--pink) 82%, var(--wine));
+  --bright:color-mix(in srgb, #FFFFFF 42%, var(--pink));
 }
 }
 :root{
@@ -97,7 +99,7 @@ h1 .it{font-style:italic;color:var(--pink)}
   line-height:1.65;color:var(--muted);
 }
 .sub b{font-weight:400;color:var(--pink)}
-.fade{opacity:0;transform:translate3d(0,18px,0);transition:opacity 1s var(--e) .55s,transform 1s var(--e) .55s}
+.js .fade{opacity:0;transform:translate3d(0,18px,0);transition:opacity 1s var(--e) .55s,transform 1s var(--e) .55s}
 .go .fade{opacity:1;transform:none}
 
 /* ── hard numbers ────────────────────── */
@@ -112,13 +114,13 @@ h1 .it{font-style:italic;color:var(--pink)}
 
 
 /* ── statement: no eyebrow, no heading ─ */
-.say{padding:92px 0 80px}
+.say{padding:92px 0 80px;background:var(--navy);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .say p{
   font-family:var(--serif);font-weight:300;margin:0;max-width:17em;
   font-size:clamp(30px,5.4vw,66px);line-height:1.12;letter-spacing:-.025em;color:var(--bright);
 }
 .say p em{font-style:italic;color:var(--pink)}
-.say .wd{display:inline-block;opacity:.16;transition:opacity .6s var(--e)}
+.js .say .wd{display:inline-block;opacity:.16;transition:opacity .6s var(--e)}
 .say.lit .wd{opacity:1}
 
 /* ── bio: asymmetric, photo breaks grid ─ */
@@ -126,15 +128,29 @@ h1 .it{font-style:italic;color:var(--pink)}
 .bio p{margin:0 0 22px;color:var(--muted);font-size:17px;max-width:46ch}
 .bio p:first-child{color:var(--pink);font-size:19px}
 .shot{position:relative;margin-top:0;max-width:300px}
-.shot .box{
+.shot .box{background:var(--navy);
   aspect-ratio:4/5;background:var(--panel);border:1px solid var(--line);
   display:flex;align-items:center;justify-content:center;text-align:center;padding:26px;
   color:var(--dim);font-size:10px;letter-spacing:.24em;text-transform:uppercase;line-height:2.4;
 }
+.shot img{
+  display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;
+  border:1px solid var(--line);
+  transition:filter .6s var(--e),transform .7s var(--e);
+}
+.shot:hover img{transform:scale(1.015)}
+.shot::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top,
+    color-mix(in srgb, var(--wine) 72%, transparent) 0%,
+    color-mix(in srgb, var(--wine) 18%, transparent) 14%,
+    transparent 30%);
+  border:1px solid var(--line);
+}
 .shot .cap{
-  position:absolute;left:-30px;bottom:34px;background:var(--wine);
-  padding:11px 20px;border:1px solid var(--line);
-  font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);white-space:nowrap;
+  position:absolute;left:18px;bottom:18px;z-index:3;background:transparent;
+  padding:0;border:0;
+  font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--bright);white-space:nowrap;
 }
 
 
@@ -160,7 +176,7 @@ h1 .it{font-style:italic;color:var(--pink)}
 
 
 .row{display:grid;grid-template-columns:1fr;gap:14px;padding:32px 0;border-top:1px solid var(--line);transition:background .5s var(--e)}
-.row:hover{background:var(--shell)}
+.row:hover{background:var(--navy)}
 .row:last-of-type{border-bottom:1px solid var(--line)}
 .row .k{font-family:var(--serif);font-style:italic;font-size:30px;color:var(--dim);line-height:1}
 .row h3{font-family:var(--serif);font-weight:400;font-size:clamp(25px,3.2vw,38px);line-height:1.06;letter-spacing:-.022em;margin:0 0 8px;color:var(--bright)}
@@ -170,7 +186,7 @@ h1 .it{font-style:italic;color:var(--pink)}
 
 
 /* ── method: prose, not a card grid ──── */
-.method{padding:88px 0}
+.method{padding:88px 0;background:var(--navy);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .method h2{
   font-family:var(--serif);font-weight:300;font-size:clamp(32px,5vw,58px);
   line-height:1.06;letter-spacing:-.028em;margin:0 0 56px;color:var(--bright);max-width:11em;
@@ -197,7 +213,7 @@ h1 .it{font-style:italic;color:var(--pink)}
 
 
 /* ── close ───────────────────────────── */
-.close{padding:92px 0 46px;border-top:1px solid var(--line)}
+.close{padding:92px 0 46px;background:var(--navy);border-top:1px solid var(--line)}
 .close h2{
   font-family:var(--serif);font-weight:300;margin:0 0 40px;
   font-size:clamp(50px,11vw,150px);line-height:.88;letter-spacing:-.038em;color:var(--bright);
@@ -263,7 +279,7 @@ body.locked{overflow:hidden}
 .w-item{display:grid;grid-template-columns:40px minmax(0,1fr) 26px;gap:15px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line);text-decoration:none;position:relative;}
 
 .w-item::before{
-  content:"";position:absolute;inset:0 -18px;background:var(--shell);
+  content:"";position:absolute;inset:0 -18px;background:var(--navy);
   opacity:0;transition:opacity .45s var(--e);z-index:-1;
 }
 .w-item:hover > *{transform:translate3d(13px,0,0)}
@@ -357,7 +373,7 @@ body.locked{overflow:hidden}
 
 
 /* ── designed placeholder panel ─────── */
-.cp-hero.plate{background:var(--shell);border:1px solid var(--line);
+.cp-hero.plate{background:var(--navy);border:1px solid var(--line);
   aspect-ratio:16/9;display:flex;align-items:flex-end;position:relative;overflow:hidden}
 .cp-hero.plate::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:
@@ -373,7 +389,7 @@ body.locked{overflow:hidden}
 .plate-s{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 
 /* ── scroll reveal: clip wipe ───────── */
-[data-reveal]{clip-path:inset(0 0 100% 0);transition:clip-path 1.05s var(--e)}
+.js [data-reveal]{clip-path:inset(0 0 100% 0);transition:clip-path 1.05s var(--e)}
 [data-reveal].shown{clip-path:inset(0 0 0 0)}
 
 /* ── custom cursor ──────────────────── */
@@ -389,14 +405,8 @@ body.locked{overflow:hidden}
 .cur-ring.on{opacity:1}
 @media(hover:none),(pointer:coarse){.cur,.cur-ring{display:none}}
 
-/* ── page transition ────────────────── */
-.wipe{position:fixed;inset:0;z-index:300;background:var(--wine);
-  transform:translate3d(0,100%,0);pointer-events:none}
-.wipe.in{transform:translate3d(0,0,0);transition:transform .55s var(--e)}
-.wipe.out{transform:translate3d(0,-100%,0);transition:transform .6s var(--e)}
-
 /* ── reveal ──────────────────────────── */
-.rv{opacity:0;transform:translate3d(0,26px,0);transition:opacity .9s var(--e),transform .9s var(--e);will-change:opacity,transform}
+.js .rv{opacity:0;transform:translate3d(0,26px,0);transition:opacity .9s var(--e),transform .9s var(--e);will-change:opacity,transform}
 .rv.in{will-change:auto}
 .rv.in{opacity:1;transform:none}
 .rv.b{transition-delay:.12s}
@@ -508,7 +518,6 @@ a:focus-visible{outline:2px solid var(--pink);outline-offset:5px}
   </div>
 </nav>
 
-<div class="wipe" id="wipe"></div>
 <div class="cur" id="cur"></div>
 <div class="cur-ring" id="curRing"></div>
 
@@ -585,11 +594,25 @@ a:focus-visible{outline:2px solid var(--pink);outline-offset:5px}
   requestAnimationFrame(function () { document.body.classList.add('go'); });
 
   if (say) {
-    say.innerHTML = say.innerHTML.replace(/(<em>)?([^<\s]+)/g, function (m, em, word) {
-      return (em || '') + '<span class="wd">' + word + '</span>';
+    // wrap words in text nodes only, so inline tags like <em> survive intact
+    var walker = document.createTreeWalker(say, NodeFilter.SHOW_TEXT, null);
+    var nodes = [], n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(function (node) {
+      var parts = node.nodeValue.split(/(\s+)/);
+      var frag = document.createDocumentFragment();
+      parts.forEach(function (part) {
+        if (!part) return;
+        if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+        var sp = document.createElement('span');
+        sp.className = 'wd';
+        sp.textContent = part;
+        frag.appendChild(sp);
+      });
+      node.parentNode.replaceChild(frag, node);
     });
-    say.querySelectorAll('.wd').forEach(function (s, i) {
-      s.style.transitionDelay = (i * 44) + 'ms';
+    say.querySelectorAll('.wd').forEach(function (el, i) {
+      el.style.transitionDelay = (i * 44) + 'ms';
     });
   }
 
@@ -671,25 +694,50 @@ a:focus-visible{outline:2px solid var(--pink);outline-offset:5px}
     });
   }
 
-  // ---- page transition ----
-  var wipe = document.getElementById('wipe');
-  if (wipe) {
-    document.addEventListener('click', function (e) {
-      var a = e.target.closest('a[href]');
-      if (!a) return;
-      var href = a.getAttribute('href');
-      if (!href || href.charAt(0) === '#' || a.target === '_blank') return;
-      if (href.indexOf('mailto:') === 0 || href.indexOf('http') === 0) return;
-      e.preventDefault();
-      wipe.classList.add('in');
-      setTimeout(function () { window.location.href = href; }, 480);
-    });
-    window.addEventListener('pageshow', function () {
-      wipe.classList.remove('in');
-      wipe.classList.add('out');
-      setTimeout(function () { wipe.classList.remove('out'); }, 650);
-    });
+}());
+</script>
+
+<script>
+/* Safety net. The animations above hide things until they are scrolled into
+   view. If any of that breaks (an old browser, a script error, an observer
+   that never fires) this puts everything back on screen so a page can never
+   end up blank. Runs on its own so a failure in the script above can't skip it. */
+(function () {
+  'use strict';
+  var done = false;
+  function showAll() {
+    if (done) return;
+    done = true;
+    document.body.classList.add('go');
+    document.querySelectorAll('.rv').forEach(function (n) { n.classList.add('in'); });
+    document.querySelectorAll('[data-reveal]').forEach(function (n) { n.classList.add('shown'); });
+    document.querySelectorAll('.say').forEach(function (n) { n.classList.add('lit'); });
   }
+  window.addEventListener('error', showAll);
+  if (!('IntersectionObserver' in window)) { showAll(); return; }
+
+  // Prove the observer actually fires. Watch the header, which is always on
+  // screen at load. No callback means reveals would never trigger on scroll
+  // either, so show everything rather than leave the page empty.
+  try {
+    var probe = document.querySelector('header, nav, body > *');
+    var fired = false;
+    var test = new IntersectionObserver(function () { fired = true; test.disconnect(); });
+    test.observe(probe);
+    setTimeout(function () { if (!fired) showAll(); }, 700);
+  } catch (err) { showAll(); return; }
+
+  setTimeout(function () {
+    // Only count things sitting well inside the viewport. Anything near the
+    // bottom edge is simply waiting its turn, which is correct behaviour.
+    var stuck = [].slice.call(document.querySelectorAll('.rv,[data-reveal]'))
+      .filter(function (n) {
+        var r = n.getBoundingClientRect();
+        if (r.top > window.innerHeight * 0.7 || r.bottom < 0) return false;
+        return !n.classList.contains('in') && !n.classList.contains('shown');
+      });
+    if (stuck.length || !document.body.classList.contains('go')) showAll();
+  }, 1500);
 }());
 </script>
 </body>

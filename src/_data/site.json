@@ -41,7 +41,7 @@
       "text": "Before that: four internships across social, product marketing and creative. Small teams, so I got to do a bit of everything."
     }
   ],
-  "photo": "",
+  "photo": "/images/yesha.jpg",
   "photoCaption": "Marketing Operations Associate",
   "closeHeading": "Say",
   "closeHeadingItalic": "hello",
@@ -50,8 +50,9 @@
   "city": "Chicago, IL",
   "seoTitle": "Yesha Prajapati, Marketing Operations",
   "seoDesc": "Marketing operations at Archer Lewis. Campaigns, brand systems and CRM for 35 accounting firms. Previously organic search for Ford.com at VML.",
-  "colorBg": "#2C0A16",
-  "colorAccent": "#F4C9DD",
+  "colorBg": "#45111F",
+  "colorNavy": "#101C33",
+  "colorAccent": "#E9A8BC",
   "navItems": [
     {
       "label": "Work",
