@@ -1,10 +1,10 @@
 ---
 title: "Editorial & advertising"
-summary: "Design work across flyers, social, storyboards and branding templates — plus published editorial."
+summary: "Design work across flyers, social, storyboards and branding templates, plus published editorial."
 client: "Five94' Marketing Solutions · Her Campus"
 group: "In-house & agency"
 order: 11
-year: "2021 — 2022"
+year: "2021 - 2022"
 scope: "Design · Editorial"
 points:
   - text: "Designed flyers, social media posts, posters, e-cards and banners for the agency."

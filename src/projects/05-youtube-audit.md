@@ -1,7 +1,7 @@
 ---
 title: "Organic search × social: YouTube audit"
-summary: "A YouTube audit for Ford led from an SEO perspective — one of the first formal Organic Search and Social collaborations."
-client: "VML — Ford Motor Company"
+summary: "A YouTube audit for Ford led from an SEO perspective, one of the first formal Organic Search and Social collaborations."
+client: "VML, Ford Motor Company"
 group: "VML"
 order: 5
 year: "2024"
@@ -21,8 +21,7 @@ Company**, led from an SEO perspective in collaboration with the Social team.
 I analysed how audiences search for Ford across Google and YouTube, identified
 keyword gaps and intent patterns, and used competitor gap analysis to uncover
 content opportunities the channel wasn't fully capturing. Findings were organised
-into keyword "buckets", opportunity themes and a prioritised content roadmap —
-clear recommendations for future video topics and optimisation.
+into keyword "buckets", opportunity themes and a prioritised content roadmap: clear recommendations for future video topics and optimisation.
 
 > Generic EV searches ("electric truck", "electric car") were outpacing
 > model-name queries, which pointed to a need for more EV education content.

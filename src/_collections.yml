@@ -160,7 +160,7 @@ collections:
           name: "dates",
           label: "Dates",
           widget: "string",
-          hint: "e.g. March 2025 — Present",
+          hint: "e.g. March 2025 - Present",
         }
       - {
           name: "group",
@@ -211,22 +211,22 @@ collections:
             }
           - {
               name: "headSmall",
-              label: "Headline — small grey first line",
+              label: "Headline, small grey first line",
               widget: "string",
             }
           - {
               name: "headLine2",
-              label: "Headline — second line",
+              label: "Headline, second line",
               widget: "string",
             }
           - {
               name: "headLine2Italic",
-              label: "Headline — italic pink word",
+              label: "Headline, italic pink word",
               widget: "string",
               required: false,
               hint: "Exact word from the second line, e.g. 35. Leave blank for none.",
             }
-          - { name: "headLine3", label: "Headline — third line", widget: "string" }
+          - { name: "headLine3", label: "Headline, third line", widget: "string" }
           - { name: "sub", label: "Paragraph under the headline", widget: "text" }
           - {
               name: "subBold",
@@ -239,7 +239,7 @@ collections:
               name: "stats",
               label: "Numbers row",
               widget: "list",
-              summary: "{{fields.figure}} — {{fields.label}}",
+              summary: "{{fields.figure}}, {{fields.label}}",
               max: 4,
               fields:
                 [
@@ -254,7 +254,7 @@ collections:
             }
           - {
               name: "methodHeadingItalic",
-              label: "Method heading — italic word",
+              label: "Method heading, italic word",
               widget: "string",
             }
           - {
@@ -265,7 +265,7 @@ collections:
             }
           - {
               name: "statementItalic",
-              label: "Statement — italic ending",
+              label: "Statement, italic ending",
               widget: "string",
             }
           - {
@@ -290,7 +290,7 @@ collections:
           - { name: "closeHeading", label: "Contact heading", widget: "string" }
           - {
               name: "closeHeadingItalic",
-              label: "Contact heading — italic word",
+              label: "Contact heading, italic word",
               widget: "string",
             }
           - { name: "email", label: "Email address", widget: "string" }

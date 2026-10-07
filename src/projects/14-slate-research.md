@@ -6,7 +6,7 @@ group: "Research & strategy"
 order: 14
 scope: "Consumer research · Positioning"
 points:
-  - text: "Designed and distributed a digital survey — 289 responses, refined to N=102."
+  - text: "Designed and distributed a digital survey, 289 responses, refined to N=102."
   - text: "Conducted frequency analysis and cross-variable evaluation."
   - text: "Identified primary purchase drivers and brand perception gaps."
   - text: "Developed product positioning and messaging recommendations."

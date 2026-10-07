@@ -151,7 +151,7 @@
         return e('div', {},
           e('style', {}, CSS),
           e('p', { className: 'tag' },
-            'Selected work — ' + String(d.get('order') || 1).padStart(2, '0')),
+            'Selected work - ' + String(d.get('order') || 1).padStart(2, '0')),
           e('h2', {
             dangerouslySetInnerHTML: {
               __html: italicise(d.get('title') || 'Untitled', d.get('titleItalic'))

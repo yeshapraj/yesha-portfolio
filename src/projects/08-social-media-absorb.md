@@ -4,13 +4,13 @@ summary: "Managed five channels, grew LinkedIn 20% and lifted engagement and cli
 client: "Absorb Software"
 group: "In-house & agency"
 order: 8
-year: "2022 — 2023"
+year: "2022 - 2023"
 scope: "Social strategy · Content · Reporting"
 points:
   - text: "Managed LinkedIn, Instagram, Twitter, YouTube and Facebook."
   - text: "Tracked social analytics across all channels and produced weekly reports."
   - text: "Created and deployed paid and organic campaigns."
-  - text: "Produced new LinkedIn formats — carousel posts, case study videos, podcast promos and employee snippets."
+  - text: "Produced new LinkedIn formats, carousel posts, case study videos, podcast promos and employee snippets."
 image: ""
 caption: "Screenshot"
 gallery: []

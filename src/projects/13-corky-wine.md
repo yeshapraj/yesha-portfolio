@@ -6,7 +6,7 @@ group: "Research & strategy"
 order: 13
 scope: "Brand strategy · GTM planning"
 points:
-  - text: "Built an STP framework — segmentation, targeting, positioning."
+  - text: "Built an STP framework, segmentation, targeting, positioning."
   - text: "Conducted competitive mapping against emerging wellness beverage brands."
   - text: "Developed the brand positioning statement and value proposition."
   - text: "Designed a subscription pricing model, distribution plan and integrated promotional strategy."

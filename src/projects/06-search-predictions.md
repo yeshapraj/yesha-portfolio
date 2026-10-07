@@ -1,7 +1,7 @@
 ---
 title: "2025 predictions for organic search"
 summary: "Contributed to VML's annual thought leadership deck on the future of search marketing."
-client: "VML — industry thought leadership"
+client: "VML, industry thought leadership"
 group: "VML"
 order: 6
 year: "2025"

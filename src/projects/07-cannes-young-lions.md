@@ -7,7 +7,7 @@ order: 7
 year: "2025"
 scope: "Strategic media campaign"
 points:
-  - text: "Developed 'Grow Your Garden' — connecting sustainable food education with measurable social impact for Gen Z and Millennials."
+  - text: "Developed 'Grow Your Garden', connecting sustainable food education with measurable social impact for Gen Z and Millennials."
   - text: "Built influencer partnerships (Keith Lee, Yara Shahidi, Kai Cenat) into the campaign architecture."
   - text: "Planned paid media flighting across social, streaming, DOOH and display."
   - text: "Designed a 3-phase awareness-to-longevity strategy projected to generate 40.9M impressions."
