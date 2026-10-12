@@ -19,6 +19,9 @@ gallery:
     caption: "Consumer insight"
   - image: "/images/work/14-slate-research-g3.jpg"
     caption: "Recommendation"
+docs:
+  - file: "/files/slate-brand-strategy.pdf"
+    label: "Slate brand strategy"
 ---
 Led a consumer research initiative evaluating purchase drivers and perception
 gaps within the RTD beverage category, focusing on positioning opportunities for

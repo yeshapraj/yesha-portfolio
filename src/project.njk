@@ -34,7 +34,8 @@ eleventyComputed:
     </div>
 
     <div class="cp-hero{% if not p.data.image %} plate{% endif %}" data-reveal>
-      {% if p.data.image %}<img src="{{ p.data.image }}" alt="{{ p.data.title }}">
+      {% if p.data.image %}<img src="{{ p.data.image }}" alt="{{ p.data.title }}"
+        data-zoom data-cap="{{ p.data.caption or p.data.title }}">
       {% else %}
       <div class="plate-in">
         <span class="plate-n">{{ p.data.order | pad }}</span>
@@ -61,10 +62,27 @@ eleventyComputed:
     <div class="cp-gallery">
       {% for g in p.data.gallery %}
       <figure>
-        <img src="{{ g.image }}" alt="{{ g.caption or p.data.title }}" loading="lazy">
+        <img src="{{ g.image }}" alt="{{ g.caption or p.data.title }}" loading="lazy"
+             data-zoom data-cap="{{ g.caption or p.data.title }}">
         {% if g.caption %}<figcaption>{{ g.caption }}</figcaption>{% endif %}
       </figure>
       {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if p.data.docs and p.data.docs.length %}
+    <div class="cp-docs">
+      <p class="cp-lbl">The documents</p>
+      <ul>
+        {% for d in p.data.docs %}
+        <li>
+          <a href="{{ d.file }}" download>
+            <span class="dl-name">{{ d.label }}</span>
+            <span class="dl-act">PDF <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v10M4 7.5 8 11.5l4-4M2 14h12" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
     </div>
     {% endif %}
 

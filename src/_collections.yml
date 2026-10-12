@@ -95,11 +95,30 @@ collections:
           widget: "list",
           required: false,
           summary: "{{fields.caption}}",
-          hint: "Extra screenshots for this project's own page. Two per row.",
+          hint: "Extra images for this project's page. Three per row, and each one opens full size when clicked.",
           fields:
             [
               { name: "image", label: "Image", widget: "image" },
               { name: "caption", label: "Caption", widget: "string", required: false },
+            ],
+        }
+      - {
+          name: "docs",
+          label: "Documents to download",
+          widget: "list",
+          required: false,
+          summary: "{{fields.label}}",
+          hint: "PDFs a visitor can download, listed under the images. Upload the real file, not a screenshot.",
+          fields:
+            [
+              {
+                name: "file",
+                label: "File",
+                widget: "file",
+                media_folder: "/src/files",
+                public_folder: "/files",
+              },
+              { name: "label", label: "What it is", widget: "string" },
             ],
         }
       - {

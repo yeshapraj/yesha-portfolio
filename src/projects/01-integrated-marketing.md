@@ -17,6 +17,9 @@ caption: "Rulien & Associates bookkeeping mailer, front"
 gallery:
   - image: "/images/work/01-integrated-marketing-g1.jpg"
     caption: "Mailer reverse"
+docs:
+  - file: "/files/rulien-bookkeeping-mailer.pdf"
+    label: "Rulien bookkeeping mailer"
 ---
 ## The situation
 

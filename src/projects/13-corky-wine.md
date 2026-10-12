@@ -20,6 +20,9 @@ gallery:
     caption: "Positioning map"
   - image: "/images/work/13-corky-wine-g3.jpg"
     caption: "Social and lifestyle direction"
+docs:
+  - file: "/files/corky-wine-brand-strategy.pdf"
+    label: "Corky Wine brand strategy"
 ---
 Developed a comprehensive brand strategy for a millennial-focused functional
 wine concept positioned within the adaptogen and wellness beverage space.

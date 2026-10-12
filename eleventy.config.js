@@ -9,6 +9,7 @@ const RETIRED = [
 module.exports = function (c) {
   c.addPassthroughCopy({ "src/admin/index.html": "admin/index.html" });
   c.addPassthroughCopy("src/images");
+  c.addPassthroughCopy("src/files");
 
   const byOrder = (a, b) => (a.data.order || 99) - (b.data.order || 99);
   const live = (col) => col.filter((i) => !RETIRED.includes(i.fileSlug));

@@ -20,6 +20,9 @@ gallery:
     caption: "Idea"
   - image: "/images/work/07-cannes-young-lions-g3.jpg"
     caption: "Execution"
+docs:
+  - file: "/files/cannes-young-lions-2025.pdf"
+    label: "Cannes Young Lions 2025 entry"
 ---
 In 2025 I competed in the **Cannes Young Lions** competition, developing a fully
 integrated campaign for WhyHunger in partnership with Whole Foods Market.

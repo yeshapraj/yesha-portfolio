@@ -14,6 +14,9 @@ points:
 image: "/images/work/11-editorial-advertising-hero.jpg"
 caption: "JNR Advisory full-page advertisement"
 gallery: []
+docs:
+  - file: "/files/jnr-advisory-ad.pdf"
+    label: "JNR Advisory advertisement"
 ---
 ## Five94' Marketing Solutions
 

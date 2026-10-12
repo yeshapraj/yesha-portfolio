@@ -19,6 +19,9 @@ gallery:
     caption: "Top predictions for 2025"
   - image: "/images/work/06-search-predictions-g3.jpg"
     caption: "Takeaways for discoverability"
+docs:
+  - file: "/files/vml-2025-search-predictions.pdf"
+    label: "2025 Predictions for Search Marketing"
 ---
 Contributed to VML's annual thought leadership deck outlining key predictions
 shaping the future of search marketing in 2025. Collaborated cross-functionally

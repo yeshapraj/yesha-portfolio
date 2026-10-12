@@ -22,6 +22,17 @@ gallery:
     caption: "45L tax credit flyer"
   - image: "/images/work/02-brand-systems-g4.jpg"
     caption: "Bookkeeping services flyer"
+docs:
+  - file: "/files/cost-segregation-whitepaper.pdf"
+    label: "Cost Segregation Strategy whitepaper"
+  - file: "/files/archer-lewis-services.pdf"
+    label: "Services one-pager"
+  - file: "/files/archer-lewis-cost-segregation.pdf"
+    label: "Cost segregation services flyer"
+  - file: "/files/archer-lewis-45l.pdf"
+    label: "45L tax credit flyer"
+  - file: "/files/archer-lewis-bookkeeping.pdf"
+    label: "Bookkeeping services flyer"
 ---
 ## Campaign and service collateral
 

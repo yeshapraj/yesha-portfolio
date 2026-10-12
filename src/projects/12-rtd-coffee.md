@@ -17,6 +17,9 @@ gallery:
     caption: "Market analysis"
   - image: "/images/work/12-rtd-coffee-g2.jpg"
     caption: "Findings"
+docs:
+  - file: "/files/rtd-coffee-industry-analysis.pdf"
+    label: "Analysis of the RTD coffee industry"
 ---
 Conducted a comprehensive industry analysis of the Ready-to-Drink (RTD) coffee
 market using syndicated research sources to evaluate consumption trends, brand
