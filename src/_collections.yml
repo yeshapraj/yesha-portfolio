@@ -319,17 +319,28 @@ collections:
             }
           - {
               name: "colorBg",
-              label: "Background colour",
+              label: "Background colour (wine)",
               widget: "color",
-              hint: "The whole site is mixed from these two colours. Change them and everything recolours.",
+              hint: "The whole site is mixed from these four colours. Change them and everything recolours.",
+            }
+          - {
+              name: "colorBlush",
+              label: "Text colour (blush)",
+              widget: "color",
+              hint: "Carries all the headings and body copy. Keep it light or the text stops being readable.",
             }
           - {
               name: "colorNavy",
-              label: "Secondary surface colour",
+              label: "Accent colour (navy)",
               widget: "color",
-              hint: "Navy. Used for the About band, Method section, footer and image panels.",
+              hint: "Used for image panels and the hover sweep on the work list.",
             }
-          - { name: "colorAccent", label: "Accent colour", widget: "color" }
+          - {
+              name: "colorAccent",
+              label: "Accent colour (gold)",
+              widget: "color",
+              hint: "Every hairline rule on the site is mixed from this.",
+            }
           - {
               name: "navItems",
               label: "Menu links",

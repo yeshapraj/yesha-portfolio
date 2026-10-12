@@ -22,19 +22,19 @@
   --navy:{{ site.colorNavy }};
   --gold:{{ site.colorAccent }};
 
-  /* --pink is the light type tone, lifted out of the gold so the page keeps
-     one warm family. Gold itself is too dark to set text in. */
-  --pink:#D7BE95;
-  --shell:#3B1326;
-  --panel:#3A1430;
-  --line:#5E3426;
-  --dim:#AF9478;
-  --muted:#C0A585;
-  --bright:#E7D7BE;
+  /* four source colours: wine behind everything, blush carries the type,
+     navy and gold are the accents. Everything else is mixed from these. */
+  --pink:{{ site.colorBlush }};
+  --shell:#250827;
+  --panel:#210732;
+  --line:#4F2C20;
+  --dim:#B47C8E;
+  --muted:#C78C9E;
+  --bright:#F2CDD8;
+  --gut:22px;
 }
 @supports (color: color-mix(in srgb, red, blue)){
 :root{
-  --pink:color-mix(in srgb, #FFFFFF 62%, var(--gold));
   --shell:color-mix(in srgb, var(--navy) 16%, var(--wine));
   --panel:color-mix(in srgb, var(--navy) 26%, var(--wine));
   --line:color-mix(in srgb, var(--gold) 34%, var(--wine));
@@ -58,7 +58,7 @@ body{
 a{color:inherit}
 img{max-width:100%;height:auto;display:block}
 ::selection{background:var(--pink);color:var(--wine)}
-.w{width:100%;margin:0 auto;padding:0 22px}
+.w{width:100%;margin:0 auto;padding:0 var(--gut)}
 
 
 /* ── nav ─────────────────────────────── */
@@ -123,10 +123,14 @@ h1 .it{font-style:italic;color:var(--pink)}
 
 
 /* ── statement: no eyebrow, no heading ─ */
-/* navy is an accent, not a surface: a bar on the edge, not a filled band */
-.say{position:relative;padding:92px 0 80px;background:var(--wine);
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.say::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold)}
+/* section rules live on the inner wrapper, so they start and end exactly
+   where the text does instead of running to the window edge. */
+.say{position:relative;background:var(--wine)}
+.say > .w{position:relative;padding-top:92px;padding-bottom:80px}
+.say > .w::before,.say > .w::after{content:"";position:absolute;
+  left:var(--gut);right:var(--gut);height:1px;background:var(--line)}
+.say > .w::before{top:0}
+.say > .w::after{bottom:0}
 .say p{
   font-family:var(--serif);font-weight:300;margin:0;max-width:17em;
   font-size:clamp(30px,5.4vw,66px);line-height:1.12;letter-spacing:-.025em;color:var(--bright);
@@ -194,9 +198,12 @@ h1 .it{font-style:italic;color:var(--pink)}
 
 
 /* ── method: prose, not a card grid ──── */
-.method{position:relative;padding:88px 0;background:var(--wine);
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.method::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold)}
+.method{position:relative;background:var(--wine)}
+.method > .w{position:relative;padding-top:88px;padding-bottom:88px}
+.method > .w::before,.method > .w::after{content:"";position:absolute;
+  left:var(--gut);right:var(--gut);height:1px;background:var(--line)}
+.method > .w::before{top:0}
+.method > .w::after{bottom:0}
 .method h2{
   font-family:var(--serif);font-weight:300;font-size:clamp(32px,5vw,58px);
   line-height:1.06;letter-spacing:-.028em;margin:0 0 56px;color:var(--bright);max-width:11em;
@@ -223,8 +230,10 @@ h1 .it{font-style:italic;color:var(--pink)}
 
 
 /* ── close ───────────────────────────── */
-.close{position:relative;padding:92px 0 46px;background:var(--wine);border-top:1px solid var(--line)}
-.close::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold)}
+.close{position:relative;background:var(--wine)}
+.close > .w{position:relative;padding-top:92px;padding-bottom:46px}
+.close > .w::before{content:"";position:absolute;top:0;
+  left:var(--gut);right:var(--gut);height:1px;background:var(--line)}
 .close h2{
   font-family:var(--serif);font-weight:300;margin:0 0 40px;
   font-size:clamp(50px,11vw,150px);line-height:.88;letter-spacing:-.038em;color:var(--bright);
@@ -431,7 +440,7 @@ a:focus-visible{outline:2px solid var(--pink);outline-offset:5px}
 
 /* ══ TABLET  ≥600 ═══════════════════════════════════ */
 @media(min-width:600px){
-  .w{padding:0 32px}
+  .w{--gut:32px}
   .nums{grid-template-columns:repeat(4,1fr);margin-top:72px}
   .nums div{padding:24px 18px 26px 0;margin-right:18px;border-right:1px solid var(--line)}
   .nums div:nth-child(2n){border-right:1px solid var(--line);margin-right:18px}
@@ -444,7 +453,7 @@ a:focus-visible{outline:2px solid var(--pink);outline-offset:5px}
 
 /* ══ LARGE TABLET  ≥820 ═════════════════════════════ */
 @media(min-width:820px){
-  .w{padding:0 40px}
+  .w{--gut:40px}
   .mlist{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 56px}
   .cp-gallery{grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
   .cp-body{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:52px}
@@ -457,7 +466,7 @@ a:focus-visible{outline:2px solid var(--pink);outline-offset:5px}
 
 /* ══ LAPTOP  ≥1024 ══════════════════════════════════ */
 @media(min-width:1024px){
-  .w{max-width:1240px;padding:0 44px}
+  .w{max-width:1240px;--gut:44px}
   .nl{display:flex}
   .nb{display:none}
   .nmenu{display:none}
@@ -481,7 +490,7 @@ a:focus-visible{outline:2px solid var(--pink);outline-offset:5px}
 
 /* ══ DESKTOP  ≥1440 ═════════════════════════════════ */
 @media(min-width:1440px){
-  .w{max-width:1340px;padding:0 56px}
+  .w{max-width:1340px;--gut:56px}
   .bio{gap:100px}
   .lead-grid{gap:76px}
   .cp-body{gap:76px}
@@ -491,7 +500,7 @@ a:focus-visible{outline:2px solid var(--pink);outline-offset:5px}
 @media(min-width:1800px){
   :root{--step:1.12}
   body{font-size:18px}
-  .w{max-width:1560px;padding:0 72px}
+  .w{max-width:1560px;--gut:72px}
   .sub{font-size:clamp(19px,1.5vw,26px)}
   .nums b{font-size:clamp(46px,3.6vw,76px)}
   .w-sum{font-size:16.5px;max-width:58ch}

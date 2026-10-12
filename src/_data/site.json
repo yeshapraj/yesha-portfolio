@@ -50,9 +50,10 @@
   "city": "Chicago, IL",
   "seoTitle": "Yesha Prajapati, Marketing Operations",
   "seoDesc": "Marketing operations at Archer Lewis. Campaigns, brand systems and CRM for 35 accounting firms. Previously organic search for Ford.com at VML.",
-  "colorBg": "#45111F",
+  "colorBg": "#2C0A16",
   "colorNavy": "#000080",
   "colorAccent": "#926F34",
+  "colorBlush": "#E9A8BC",
   "navItems": [
     {
       "label": "Work",
