@@ -11,9 +11,17 @@ points:
   - text: "Created service-specific collateral across tax credits, bookkeeping, construction and advisory offerings."
   - text: "Maintained brand consistency across 35+ affiliated firms while adapting messaging for local markets."
   - text: "Translated complex accounting and tax topics into accessible, conversion-focused marketing materials."
-image: ""
-caption: "Screenshot"
-gallery: []
+image: "/images/work/02-brand-systems-hero.jpg"
+caption: "Cost Segregation Strategy whitepaper"
+gallery:
+  - image: "/images/work/02-brand-systems-g1.jpg"
+    caption: "Services one-pager"
+  - image: "/images/work/02-brand-systems-g2.jpg"
+    caption: "Cost segregation services flyer"
+  - image: "/images/work/02-brand-systems-g3.jpg"
+    caption: "45L tax credit flyer"
+  - image: "/images/work/02-brand-systems-g4.jpg"
+    caption: "Bookkeeping services flyer"
 ---
 ## Campaign and service collateral
 

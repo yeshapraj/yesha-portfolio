@@ -11,8 +11,8 @@ points:
   - text: "Created storyboards and branding templates for client companies."
   - text: "Developed creative strategies to increase brand awareness and reach."
   - text: "Wrote and edited articles for the Her Campus UIC chapter across lifestyle, beauty, fashion, travel and culture."
-image: ""
-caption: "Screenshot"
+image: "/images/work/11-editorial-advertising-hero.jpg"
+caption: "JNR Advisory full-page advertisement"
 gallery: []
 ---
 ## Five94' Marketing Solutions

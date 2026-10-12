@@ -51,8 +51,8 @@
   "seoTitle": "Yesha Prajapati, Marketing Operations",
   "seoDesc": "Marketing operations at Archer Lewis. Campaigns, brand systems and CRM for 35 accounting firms. Previously organic search for Ford.com at VML.",
   "colorBg": "#45111F",
-  "colorNavy": "#101C33",
-  "colorAccent": "#E9A8BC",
+  "colorNavy": "#000080",
+  "colorAccent": "#926F34",
   "navItems": [
     {
       "label": "Work",
@@ -76,6 +76,8 @@
     }
   ],
   "workTag": "Selected work",
+  "workHeading": "Things",
+  "workHeadingItalic": "I built",
   "emailLabel": "Email me",
   "linkedinLabel": "LinkedIn",
   "showStats": true,

@@ -11,9 +11,15 @@ points:
   - text: "Built influencer partnerships (Keith Lee, Yara Shahidi, Kai Cenat) into the campaign architecture."
   - text: "Planned paid media flighting across social, streaming, DOOH and display."
   - text: "Designed a 3-phase awareness-to-longevity strategy projected to generate 40.9M impressions."
-image: ""
-caption: "Screenshot"
-gallery: []
+image: "/images/work/07-cannes-young-lions-hero.jpg"
+caption: "Cannes Young Lions 2025 entry"
+gallery:
+  - image: "/images/work/07-cannes-young-lions-g1.jpg"
+    caption: "Insight"
+  - image: "/images/work/07-cannes-young-lions-g2.jpg"
+    caption: "Idea"
+  - image: "/images/work/07-cannes-young-lions-g3.jpg"
+    caption: "Execution"
 ---
 In 2025 I competed in the **Cannes Young Lions** competition, developing a fully
 integrated campaign for WhyHunger in partnership with Whole Foods Market.

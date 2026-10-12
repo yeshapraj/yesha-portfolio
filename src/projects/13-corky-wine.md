@@ -11,9 +11,15 @@ points:
   - text: "Developed the brand positioning statement and value proposition."
   - text: "Designed a subscription pricing model, distribution plan and integrated promotional strategy."
   - text: "Built financial projections and revenue modelling."
-image: ""
-caption: "Screenshot"
-gallery: []
+image: "/images/work/13-corky-wine-hero.jpg"
+caption: "Corky Wine brand strategy"
+gallery:
+  - image: "/images/work/13-corky-wine-g1.jpg"
+    caption: "Product and brand language"
+  - image: "/images/work/13-corky-wine-g2.jpg"
+    caption: "Positioning map"
+  - image: "/images/work/13-corky-wine-g3.jpg"
+    caption: "Social and lifestyle direction"
 ---
 Developed a comprehensive brand strategy for a millennial-focused functional
 wine concept positioned within the adaptogen and wellness beverage space.

@@ -248,6 +248,16 @@ collections:
                 ],
             }
           - {
+              name: "workHeading",
+              label: "Work heading",
+              widget: "string",
+            }
+          - {
+              name: "workHeadingItalic",
+              label: "Work heading, italic words",
+              widget: "string",
+            }
+          - {
               name: "methodHeading",
               label: "Method heading",
               widget: "string",

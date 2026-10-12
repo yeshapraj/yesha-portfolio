@@ -10,9 +10,13 @@ points:
   - text: "Evaluated brand share performance and market concentration."
   - text: "Assessed buying occasions and consumer behaviour drivers."
   - text: "Synthesised Mintel, Passport and IBISWorld data into actionable insights."
-image: ""
-caption: "Screenshot"
-gallery: []
+image: "/images/work/12-rtd-coffee-hero.jpg"
+caption: "Analysis of the RTD coffee industry"
+gallery:
+  - image: "/images/work/12-rtd-coffee-g1.jpg"
+    caption: "Market analysis"
+  - image: "/images/work/12-rtd-coffee-g2.jpg"
+    caption: "Findings"
 ---
 Conducted a comprehensive industry analysis of the Ready-to-Drink (RTD) coffee
 market using syndicated research sources to evaluate consumption trends, brand

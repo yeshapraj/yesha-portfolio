@@ -10,9 +10,15 @@ points:
   - text: "Conducted frequency analysis and cross-variable evaluation."
   - text: "Identified primary purchase drivers and brand perception gaps."
   - text: "Developed product positioning and messaging recommendations."
-image: ""
-caption: "Screenshot"
-gallery: []
+image: "/images/work/14-slate-research-hero.jpg"
+caption: "Slate brand strategy"
+gallery:
+  - image: "/images/work/14-slate-research-g1.jpg"
+    caption: "Research"
+  - image: "/images/work/14-slate-research-g2.jpg"
+    caption: "Consumer insight"
+  - image: "/images/work/14-slate-research-g3.jpg"
+    caption: "Recommendation"
 ---
 Led a consumer research initiative evaluating purchase drivers and perception
 gaps within the RTD beverage category, focusing on positioning opportunities for

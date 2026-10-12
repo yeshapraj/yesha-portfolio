@@ -10,9 +10,15 @@ points:
   - text: "Researched and synthesised industry trends impacting discoverability."
   - text: "Contributed insights on AI's role in reshaping search behaviours and intent."
   - text: "Collaborated cross-functionally with organic and paid search leaders."
-image: ""
-caption: "Screenshot"
-gallery: []
+image: "/images/work/06-search-predictions-hero.jpg"
+caption: "2025 Predictions for Search Marketing"
+gallery:
+  - image: "/images/work/06-search-predictions-g1.jpg"
+    caption: "Three major search evolutions"
+  - image: "/images/work/06-search-predictions-g2.jpg"
+    caption: "Top predictions for 2025"
+  - image: "/images/work/06-search-predictions-g3.jpg"
+    caption: "Takeaways for discoverability"
 ---
 Contributed to VML's annual thought leadership deck outlining key predictions
 shaping the future of search marketing in 2025. Collaborated cross-functionally

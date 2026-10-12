@@ -12,9 +12,11 @@ points:
   - text: "Run the WordPress content workflow so pages publish faster and don't need three rounds of cleanup."
   - text: "Build marketing automation and nurture flows that streamline lead follow-up and the handoff to sales."
   - text: "Create and standardise creative assets: toolkits, templates, logos and visuals, so nobody rebuilds a flyer from scratch."
-image: ""
-caption: "Screenshot"
-gallery: []
+image: "/images/work/01-integrated-marketing-hero.jpg"
+caption: "Rulien & Associates bookkeeping mailer, front"
+gallery:
+  - image: "/images/work/01-integrated-marketing-g1.jpg"
+    caption: "Mailer reverse"
 ---
 ## The situation
 

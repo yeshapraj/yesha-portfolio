@@ -20,20 +20,24 @@
 :root{
   --wine:{{ site.colorBg }};
   --navy:{{ site.colorNavy }};
-  --pink:{{ site.colorAccent }};
+  --gold:{{ site.colorAccent }};
 
-  --shell:#2B1628;
-  --panel:#101C33;
-  --line:#5C2D3A;
-  --dim:#B8949F;
-  --muted:#C6A3AD;
-  --bright:#F4EAEC;
+  /* --pink is the light type tone, lifted out of the gold so the page keeps
+     one warm family. Gold itself is too dark to set text in. */
+  --pink:#D7BE95;
+  --shell:#3B1326;
+  --panel:#3A1430;
+  --line:#5E3426;
+  --dim:#AF9478;
+  --muted:#C0A585;
+  --bright:#E7D7BE;
 }
 @supports (color: color-mix(in srgb, red, blue)){
 :root{
-  --shell:color-mix(in srgb, var(--navy) 55%, var(--wine));
-  --panel:var(--navy);
-  --line:color-mix(in srgb, var(--pink) 16%, var(--wine));
+  --pink:color-mix(in srgb, #FFFFFF 62%, var(--gold));
+  --shell:color-mix(in srgb, var(--navy) 16%, var(--wine));
+  --panel:color-mix(in srgb, var(--navy) 26%, var(--wine));
+  --line:color-mix(in srgb, var(--gold) 34%, var(--wine));
   --dim:color-mix(in srgb, var(--pink) 72%, var(--wine));
   --muted:color-mix(in srgb, var(--pink) 82%, var(--wine));
   --bright:color-mix(in srgb, #FFFFFF 42%, var(--pink));
@@ -103,9 +107,14 @@ h1 .it{font-style:italic;color:var(--pink)}
 .go .fade{opacity:1;transform:none}
 
 /* ── hard numbers ────────────────────── */
-.nums{display:grid;grid-template-columns:1fr 1fr;margin-top:52px;border-top:1px solid var(--line)}
-.nums div{padding:20px 14px 22px 0;border-right:1px solid var(--line)}
-.nums div:last-child{border-right:0}
+.nums{display:grid;grid-template-columns:1fr 1fr;margin-top:52px;
+  border-top:1px solid var(--line)}
+/* the margin matches the padding so the gap is equal either side of each
+   divider. Without it the next cell's text starts hard against the line. */
+.nums div{padding:20px 14px 22px 0;margin-right:14px;border-right:1px solid var(--line)}
+.nums div:last-child{border-right:0;margin-right:0}
+/* two columns here, so every 2nd cell ends a row: no divider on it */
+.nums div:nth-child(2n){border-right:0;margin-right:0}
 .nums b{
   display:block;font-family:var(--serif);font-weight:300;
   font-size:clamp(38px,5vw,62px);line-height:.9;color:var(--bright);letter-spacing:-.03em;
@@ -114,7 +123,10 @@ h1 .it{font-style:italic;color:var(--pink)}
 
 
 /* ── statement: no eyebrow, no heading ─ */
-.say{padding:92px 0 80px;background:var(--navy);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+/* navy is an accent, not a surface: a bar on the edge, not a filled band */
+.say{position:relative;padding:92px 0 80px;background:var(--wine);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.say::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold)}
 .say p{
   font-family:var(--serif);font-weight:300;margin:0;max-width:17em;
   font-size:clamp(30px,5.4vw,66px);line-height:1.12;letter-spacing:-.025em;color:var(--bright);
@@ -133,24 +145,20 @@ h1 .it{font-style:italic;color:var(--pink)}
   display:flex;align-items:center;justify-content:center;text-align:center;padding:26px;
   color:var(--dim);font-size:10px;letter-spacing:.24em;text-transform:uppercase;line-height:2.4;
 }
+/* the backdrop is cut out of the photo, so no frame and no panel: she sits
+   straight on the page. A frame here is the block Yesha keeps flagging. */
 .shot img{
-  display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;
-  border:1px solid var(--line);
-  transition:filter .6s var(--e),transform .7s var(--e);
+  display:block;width:100%;height:auto;border:0;
+  /* soften where the original photo was cropped, so the bottom edge
+     dissolves into the page instead of ending on a straight line */
+  -webkit-mask-image:linear-gradient(to bottom,#000 72%,rgba(0,0,0,.55) 90%,transparent 100%);
+  mask-image:linear-gradient(to bottom,#000 72%,rgba(0,0,0,.55) 90%,transparent 100%);
+  transition:transform .7s var(--e);
 }
 .shot:hover img{transform:scale(1.015)}
-.shot::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(to top,
-    color-mix(in srgb, var(--wine) 72%, transparent) 0%,
-    color-mix(in srgb, var(--wine) 18%, transparent) 14%,
-    transparent 30%);
-  border:1px solid var(--line);
-}
 .shot .cap{
-  position:absolute;left:18px;bottom:18px;z-index:3;background:transparent;
-  padding:0;border:0;
-  font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--bright);white-space:nowrap;
+  display:block;margin-top:14px;
+  font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim);
 }
 
 
@@ -186,7 +194,9 @@ h1 .it{font-style:italic;color:var(--pink)}
 
 
 /* ── method: prose, not a card grid ──── */
-.method{padding:88px 0;background:var(--navy);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.method{position:relative;padding:88px 0;background:var(--wine);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.method::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold)}
 .method h2{
   font-family:var(--serif);font-weight:300;font-size:clamp(32px,5vw,58px);
   line-height:1.06;letter-spacing:-.028em;margin:0 0 56px;color:var(--bright);max-width:11em;
@@ -213,7 +223,8 @@ h1 .it{font-style:italic;color:var(--pink)}
 
 
 /* ── close ───────────────────────────── */
-.close{padding:92px 0 46px;background:var(--navy);border-top:1px solid var(--line)}
+.close{position:relative;padding:92px 0 46px;background:var(--wine);border-top:1px solid var(--line)}
+.close::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold)}
 .close h2{
   font-family:var(--serif);font-weight:300;margin:0 0 40px;
   font-size:clamp(50px,11vw,150px);line-height:.88;letter-spacing:-.038em;color:var(--bright);
@@ -320,8 +331,11 @@ body.locked{overflow:hidden}
 .cp-meta span:first-child{display:block;font-size:9.5px;letter-spacing:.24em;
   text-transform:uppercase;color:var(--dim);margin-bottom:7px}
 .cp-meta span:last-child{font-size:16px;color:var(--pink)}
-.cp-hero{border:1px solid var(--line);background:var(--panel);margin-bottom:68px;overflow:hidden}
-.cp-hero img{width:100%;height:auto;display:block}
+/* no panel behind the artwork. The image sits in the page at its own size so
+   it reads as a document, not a filled block. */
+.cp-hero{border:0;background:none;margin-bottom:52px;overflow:visible}
+.cp-hero img{width:auto;max-width:100%;height:auto;max-height:42vh;
+  display:block;border:1px solid var(--line)}
 .cp-body{display:grid;grid-template-columns:1fr;gap:38px;margin-bottom:46px}
 .cp-body.solo{grid-template-columns:minmax(0,1fr);max-width:62ch}
 .cp-body.solo .cp-points li{font-size:16.5px}
@@ -345,7 +359,8 @@ body.locked{overflow:hidden}
 .cp-prose li{padding-bottom:9px}
 .cp-gallery{display:grid;grid-template-columns:1fr;gap:18px;margin-bottom:50px}
 .cp-gallery figure{margin:0}
-.cp-gallery img{width:100%;border:1px solid var(--line);background:var(--panel);display:block}
+.cp-gallery img{width:auto;max-width:100%;max-height:30vh;
+  border:1px solid var(--line);background:none;display:block}
 .cp-gallery figcaption{margin-top:12px;font-size:12px;color:var(--dim);letter-spacing:.04em}
 .cp-gallery figure:only-child{grid-column:1/-1}
 .cp-nav{display:grid;grid-template-columns:1fr;gap:26px;border-top:1px solid var(--line);padding-top:32px;margin-top:20px}
@@ -418,7 +433,9 @@ a:focus-visible{outline:2px solid var(--pink);outline-offset:5px}
 @media(min-width:600px){
   .w{padding:0 32px}
   .nums{grid-template-columns:repeat(4,1fr);margin-top:72px}
-  .nums div{padding:24px 18px 26px 0}
+  .nums div{padding:24px 18px 26px 0;margin-right:18px;border-right:1px solid var(--line)}
+  .nums div:nth-child(2n){border-right:1px solid var(--line);margin-right:18px}
+  .nums div:nth-child(4n),.nums div:last-child{border-right:0;margin-right:0}
   .cp-nav{grid-template-columns:1fr 1fr;gap:24px}
   .cp-link.next{text-align:right}
   .job{grid-template-columns:minmax(0,1fr) 170px;gap:28px;align-items:baseline;padding:22px 0}
@@ -429,7 +446,7 @@ a:focus-visible{outline:2px solid var(--pink);outline-offset:5px}
 @media(min-width:820px){
   .w{padding:0 40px}
   .mlist{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 56px}
-  .cp-gallery{grid-template-columns:1fr 1fr;gap:22px}
+  .cp-gallery{grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
   .cp-body{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:52px}
   .w-item{grid-template-columns:52px minmax(0,1fr) minmax(0,170px) 34px;gap:22px;padding:30px 0}
   .w-client{display:block;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);text-align:right}
