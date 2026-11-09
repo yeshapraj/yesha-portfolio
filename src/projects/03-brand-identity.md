@@ -10,8 +10,8 @@ points:
   - text: "Designed primary and secondary logo systems."
   - text: "Ensured brand alignment across the 35+ firm ecosystem."
   - text: "Delivered web, print and marketing-ready assets."
-image: ""
-caption: "Screenshot"
+image: "/images/work/03-brand-identity-hero.jpg"
+caption: "Archer Lewis parent mark with BFJW, Associated Accountants and BR&C affiliate lockups"
 gallery: []
 ---
 Developed cohesive brand identities for multiple affiliate firms within the

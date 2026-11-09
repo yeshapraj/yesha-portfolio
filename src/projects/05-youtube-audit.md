@@ -13,7 +13,9 @@ points:
   - text: "Presented the final audit multiple times in high-visibility stakeholder meetings."
 image: "/images/work/05-youtube-audit-keyword-buckets.png"
 caption: "Keyword buckets for Ford YouTube strategy (example)"
-gallery: []
+gallery:
+  - image: "/images/work/05-youtube-audit-g1.jpg"
+    caption: "Ford Motor Company YouTube playlists"
 ---
 One of my most notable projects at VML was a **YouTube audit** for **Ford Motor
 Company**, led from an SEO perspective in collaboration with the Social team.

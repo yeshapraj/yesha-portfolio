@@ -11,8 +11,8 @@ points:
   - text: "Blended technical and content-focused SEO, keyword and competitive research, gap and opportunity analysis."
   - text: "Turned findings into actionable guidance for content, UX and cross-channel teams."
   - text: "Reported performance across the customer journey for high-visibility stakeholder needs."
-image: ""
-caption: "Screenshot"
+image: "/images/work/04-seo-strategy-hero.jpg"
+caption: "Ford.com homepage"
 gallery: []
 ---
 At VML I supported an enterprise-level organic search strategy for **Ford.com**,
