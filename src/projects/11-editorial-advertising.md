@@ -12,17 +12,12 @@ points:
   - text: "Developed creative strategies to increase brand awareness and reach."
   - text: "Wrote and edited articles for the Her Campus UIC chapter across lifestyle, beauty, fashion, travel and culture."
 image: "/images/work/11-editorial-advertising-hero.jpg"
-caption: "JNR Advisory full-page advertisement"
+caption: "Five94' video production and photography offer"
 gallery:
   - image: "/images/work/11-editorial-advertising-g1.jpg"
-    caption: "Five94' video production and photography offer"
-  - image: "/images/work/11-editorial-advertising-g2.jpg"
     caption: "&Flourish storyboard, scenes 1-3"
-  - image: "/images/work/11-editorial-advertising-g3.jpg"
+  - image: "/images/work/11-editorial-advertising-g2.jpg"
     caption: "Her Campus author profile"
-docs:
-  - file: "/files/jnr-advisory-ad.pdf"
-    label: "JNR Advisory advertisement"
 ---
 ## Five94' Marketing Solutions
 
