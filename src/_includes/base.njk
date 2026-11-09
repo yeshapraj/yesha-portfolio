@@ -37,7 +37,7 @@
 :root{
   --shell:color-mix(in srgb, var(--navy) 16%, var(--wine));
   --panel:color-mix(in srgb, var(--navy) 26%, var(--wine));
-  --line:color-mix(in srgb, var(--gold) 34%, var(--wine));
+  --line:color-mix(in srgb, var(--gold) 50%, var(--wine));
   --dim:color-mix(in srgb, var(--pink) 72%, var(--wine));
   --muted:color-mix(in srgb, var(--pink) 82%, var(--wine));
   --bright:color-mix(in srgb, #FFFFFF 42%, var(--pink));
@@ -84,7 +84,7 @@ img{max-width:100%;height:auto;display:block}
   font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);
   margin:0 0 42px;display:flex;align-items:center;gap:16px;
 }
-.hero .kick::after{content:"";flex:1;height:1px;background:var(--line);max-width:190px}
+.hero .kick::after{content:"";flex:1;height:1px;background:var(--gold);max-width:190px}
 h1{
   font-family:var(--serif);font-weight:300;margin:0;
   font-size:clamp(58px,12.5vw,186px);line-height:.82;letter-spacing:-.035em;
@@ -98,6 +98,18 @@ h1 .it{font-style:italic;color:var(--pink)}
 .go .msk:nth-of-type(2) > span{transition-delay:.11s}
 .go .msk:nth-of-type(3) > span{transition-delay:.22s}
 
+.intro{
+  margin:40px 0 0;max-width:36em;font-size:clamp(16px,1.6vw,19px);
+  line-height:1.7;color:var(--pink);
+}
+.subhead{
+  margin:56px 0 0;max-width:22em;font-family:var(--serif);font-weight:300;
+  font-size:clamp(24px,3.4vw,46px);line-height:1.15;letter-spacing:-.01em;color:var(--bright);
+}
+.subhead2{
+  margin:22px 0 0;font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:clamp(19px,2.2vw,30px);line-height:1.25;color:var(--pink);
+}
 .sub{
   margin:52px 0 0;max-width:30em;font-size:clamp(16px,1.75vw,20px);
   line-height:1.65;color:var(--muted);
@@ -117,7 +129,7 @@ h1 .it{font-style:italic;color:var(--pink)}
 .nums div:nth-child(2n){border-right:0;margin-right:0}
 .nums b{
   display:block;font-family:var(--serif);font-weight:300;
-  font-size:clamp(38px,5vw,62px);line-height:.9;color:var(--bright);letter-spacing:-.03em;
+  font-size:clamp(38px,5vw,62px);line-height:.9;color:var(--gold);letter-spacing:-.03em;
 }
 .nums span{display:block;margin-top:10px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim)}
 
@@ -136,13 +148,12 @@ h1 .it{font-style:italic;color:var(--pink)}
   font-size:clamp(30px,5.4vw,66px);line-height:1.12;letter-spacing:-.025em;color:var(--bright);
 }
 .say p em{font-style:italic;color:var(--pink)}
-.js .say .wd{display:inline-block;opacity:.16;transition:opacity .6s var(--e)}
+.js .say .wd{display:inline-block;opacity:.45;transition:opacity .6s var(--e)}
 .say.lit .wd{opacity:1}
 
 /* ── bio: asymmetric, photo breaks grid ─ */
 .bio{display:grid;grid-template-columns:1fr;gap:42px;padding-bottom:84px}
-.bio p{margin:0 0 22px;color:var(--muted);font-size:17px;max-width:46ch}
-.bio p:first-child{color:var(--pink);font-size:19px}
+.bio p{margin:0 0 22px;color:var(--pink);font-size:18px;max-width:46ch}
 .shot{position:relative;margin-top:0;max-width:300px}
 .shot .box{background:var(--navy);
   aspect-ratio:4/5;background:var(--panel);border:1px solid var(--line);
@@ -224,7 +235,7 @@ h1 .it{font-style:italic;color:var(--pink)}
   color:var(--muted);margin-top:12px;max-width:52ch;line-height:1.62;letter-spacing:0}
 .job h4 small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim);margin-top:6px;font-weight:400}
 .job time{font-size:12px;letter-spacing:.12em;color:var(--muted);text-align:left;white-space:nowrap;transition:transform .45s var(--e)}
-.job.now h4::after{content:"Now";font-family:var(--sans);font-size:9px;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--pink);color:var(--pink);padding:3px 9px;margin-left:14px;vertical-align:5px}
+.job.now h4::after{content:"Now";font-family:var(--sans);font-size:9px;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--gold);color:var(--gold);padding:3px 9px;margin-left:14px;vertical-align:5px}
 
 
 /* ── close ───────────────────────────── */
@@ -286,12 +297,12 @@ body.locked{overflow:hidden}
 
 
 /* ── home: work index ───────────────── */
-.w-eyebrow{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--dim);margin:0 0 20px}
+.w-eyebrow{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin:0 0 20px}
 .w-head{font-family:var(--serif);font-weight:300;font-size:clamp(34px,6vw,76px);
   line-height:.98;letter-spacing:-.03em;margin:0 0 54px;color:var(--bright)}
 .w-head em{font-style:italic;color:var(--pink)}
 .w-list{border-top:1px solid var(--line)}
-.w-group{font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--pink);
+.w-group{font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);
   margin:0;padding:34px 0 14px;border-bottom:1px solid var(--line)}
 .w-group:first-child{padding-top:22px}
 .w-item{display:grid;grid-template-columns:40px minmax(0,1fr) 26px;gap:15px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line);text-decoration:none;position:relative;}
@@ -302,7 +313,7 @@ body.locked{overflow:hidden}
 }
 .w-item:hover > *{transform:translate3d(13px,0,0)}
 .w-item:hover::before{opacity:1}
-.w-n{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--dim);
+.w-n{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--gold);
   line-height:1;transition:color .45s var(--e),transform .5s var(--e)}
 .w-item:hover .w-n{color:var(--pink)}
 .w-title{display:block;font-family:var(--serif);font-weight:400;
@@ -347,7 +358,7 @@ body.locked{overflow:hidden}
 .cp-body.solo{grid-template-columns:minmax(0,1fr);max-width:62ch}
 .cp-body.solo .cp-points li{font-size:16.5px}
 .cp-lbl{font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;
-  color:var(--dim);margin:0 0 20px}
+  color:var(--gold);margin:0 0 20px}
 .cp-points{margin:0;padding:0;list-style:none}
 .cp-points li{padding:0 0 16px;border-bottom:1px solid var(--line);margin-bottom:16px;
   color:var(--muted);font-size:15.5px;line-height:1.66}
@@ -360,7 +371,7 @@ body.locked{overflow:hidden}
 .cp-prose p{margin:0 0 20px}
 .cp-prose strong{font-weight:400;color:var(--bright)}
 .cp-prose a{color:var(--pink)}
-.cp-prose blockquote{margin:30px 0;padding-left:26px;border-left:1px solid var(--pink);
+.cp-prose blockquote{margin:30px 0;padding-left:26px;border-left:1px solid var(--gold);
   font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.45;color:var(--bright)}
 .cp-prose ul,.cp-prose ol{margin:0 0 20px;padding-left:20px}
 .cp-prose li{padding-bottom:9px}
@@ -401,7 +412,7 @@ body.locked{overflow:hidden}
 
 /* ── designed placeholder panel ─────── */
 .cp-hero.plate{background:var(--navy);border:1px solid var(--line);
-  aspect-ratio:16/9;display:flex;align-items:flex-end;position:relative;overflow:hidden}
+  aspect-ratio:16/9;max-height:340px;width:100%;display:flex;align-items:flex-end;position:relative;overflow:hidden}
 .cp-hero.plate::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:
     repeating-linear-gradient(90deg,transparent 0 var(--c),var(--line) var(--c),var(--line) calc(var(--c) + 1px));
@@ -409,7 +420,7 @@ body.locked{overflow:hidden}
 .plate-in{position:relative;z-index:2;padding:clamp(22px,4vw,54px);width:100%;
   display:grid;gap:10px}
 .plate-n{font-family:var(--serif);font-style:italic;font-size:clamp(44px,9vw,120px);
-  line-height:.8;color:var(--pink);opacity:.5}
+  line-height:.8;color:var(--gold);opacity:.8}
 .plate-c{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--dim)}
 .plate-t{font-family:var(--serif);font-weight:300;font-size:clamp(20px,2.6vw,34px);
   line-height:1.1;color:var(--bright);max-width:22ch}

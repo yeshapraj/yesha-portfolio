@@ -10,7 +10,10 @@ permalink: /index.html
       <span class="msk"><span>{% if site.headLine2Italic %}{{ site.headLine2 | replace(site.headLine2Italic, '<span class="it">' + site.headLine2Italic + '</span>') | safe }}{% else %}{{ site.headLine2 }}{% endif %}</span></span>
       <span class="msk"><span>{{ site.headLine3 }}</span></span>
     </h1>
-    <p class="sub fade">{{ site.sub | replace(site.subBold, '<b>' + site.subBold + '</b>') | safe if site.subBold else site.sub }}</p>
+    {% if site.intro %}<p class="intro fade">{{ site.intro }}</p>{% endif %}
+    {% if site.subHead %}<p class="subhead fade">{{ site.subHead }}</p>{% endif %}
+    {% if site.subHead2 %}<p class="subhead2 fade">{{ site.subHead2 | escape | replace('\n', '<br>') | safe }}</p>{% endif %}
+    {% if site.sub %}<p class="sub fade">{{ site.sub | replace(site.subBold, '<b>' + site.subBold + '</b>') | safe if site.subBold else site.sub }}</p>{% endif %}
 
     {% if site.showStats %}<div class="nums fade">
       {% for s in site.stats %}<div><b>{{ s.figure }}</b><span>{{ s.label }}</span></div>
