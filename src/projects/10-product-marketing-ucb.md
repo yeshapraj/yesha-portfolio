@@ -11,8 +11,8 @@ points:
   - text: "Ran SWOT analyses to understand the competitive market landscape."
   - text: "Collaborated with the brand team to enhance CIMZIA's value proposition and refine patient profiles."
   - text: "Assisted Review Committee priorities and submissions in preparation for a pending brand launch."
-image: ""
-caption: "Screenshot"
+image: "/images/work/10-product-marketing-ucb-hero.jpg"
+caption: "About UCB page on the CIMZIA website"
 gallery: []
 ---
 Fuelled the acceleration of UCB's **CIMZIA** product by conducting research,

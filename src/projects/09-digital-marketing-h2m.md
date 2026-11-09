@@ -11,8 +11,8 @@ points:
   - text: "Built pages in Magento, editing assets in Adobe and Canva."
   - text: "Tracked and monitored website performance in Google Analytics, traffic up 15%."
   - text: "Created A+ content on Amazon, using Helium 10 and Intentwise for SEO."
-image: ""
-caption: "Screenshot"
+image: "/images/work/09-digital-marketing-h2m-hero.jpg"
+caption: "hand2mind Product Videos resources page"
 gallery: []
 ---
 Assisted in a complete website overhaul, creating several new web pages for

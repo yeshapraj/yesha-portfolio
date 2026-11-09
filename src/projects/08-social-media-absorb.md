@@ -11,9 +11,11 @@ points:
   - text: "Tracked social analytics across all channels and produced weekly reports."
   - text: "Created and deployed paid and organic campaigns."
   - text: "Produced new LinkedIn formats, carousel posts, case study videos, podcast promos and employee snippets."
-image: ""
-caption: "Screenshot"
-gallery: []
+image: "/images/work/08-social-media-absorb-hero.jpg"
+caption: "LinkedIn carousel: eLearning analytics"
+gallery:
+  - image: "/images/work/08-social-media-absorb-g1.jpg"
+    caption: "ADP Meeting of the Minds event graphic"
 ---
 Managed Absorb Software's LinkedIn, Instagram, Twitter, YouTube and Facebook
 presence. Tracked social analytics across all channels, produced weekly reports,
