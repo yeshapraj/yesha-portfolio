@@ -1,5 +1,5 @@
 ---
-title: "Check what people search"
+title: "Look at the evidence"
 order: 2
-body: "Keyword and competitor research. Less glamorous than it sounds, but it's the difference between guessing and knowing."
+body: "Search data, competitor work, and what people actually say about the category. Less glamorous than it sounds, but it's the difference between guessing and knowing."
 ---
