@@ -246,7 +246,10 @@ collections:
               hint: "Exact word from the second line, e.g. 35. Leave blank for none.",
             }
           - { name: "headLine3", label: "Headline, third line", widget: "string" }
-          - { name: "sub", label: "Paragraph under the headline", widget: "text" }
+          - { name: "intro", label: "Intro paragraph under the headline", widget: "text", required: false }
+          - { name: "subHead", label: "Sub headline under the headline", widget: "string", required: false }
+          - { name: "subHead2", label: "Smaller headline under the sub headline", widget: "text", required: false, hint: "Line breaks are kept" }
+          - { name: "sub", label: "Paragraph under the headline", widget: "text", required: false, hint: "Leave empty to hide" }
           - {
               name: "subBold",
               label: "Words in that paragraph to highlight",

@@ -1,13 +1,16 @@
 {
   "name": "Yesha Prajapati",
-  "role": "Marketing Operations",
-  "kicker": "Marketing operations · Chicago",
-  "headSmall": "I keep the marketing running",
-  "headLine2": "for 35",
-  "headLine2Italic": "35",
-  "headLine3": "firms.",
-  "sub": "Campaigns, brand systems and the CRM plumbing underneath them, at Archer Lewis. Before this I worked on organic search for Ford.com.",
-  "subBold": "Archer Lewis",
+  "role": "MSc Marketing Student",
+  "kicker": "MSc Marketing · Edinburgh",
+  "headSmall": "Currently an MSc Marketing student at",
+  "headLine2": "University of",
+  "headLine2Italic": "of",
+  "headLine3": "Edinburgh.",
+  "intro": "I’m currently pursuing my MSc in Marketing at the University of Edinburgh Business School, where I’m exploring the intersection of consumer psychology, cultural influences, and strategic brand development. My academic interests centre on understanding not just what drives consumer decisions, but how identity, experiences, and evolving cultural narratives shape the relationships people build with brands. Building on my professional experience, I’m particularly interested in translating consumer insights and qualitative research into thoughtful, culturally relevant marketing strategies that connect creativity with meaningful impact.",
+  "subHead": "in my previous role at Archer Lewis as a Marketing Operations Associate",
+  "subHead2": "I kept the marketing running\nfor 35 firms",
+  "sub": "",
+  "subBold": "",
   "stats": [
     {
       "figure": "35+",
@@ -28,11 +31,11 @@
   ],
   "methodHeading": "How it usually",
   "methodHeadingItalic": "goes",
-  "statement": "Most of my job is making sure 35 firms can market themselves without running",
+  "statement": "At Archer Lewis, most of my job was making sure 35 firms could market themselves without running",
   "statementItalic": "35 different systems",
   "bio": [
     {
-      "text": "Each firm has its own market and its own clients, but they share a brand. So most of the work is building something once and making it hold up everywhere it lands."
+      "text": "Each firm at Archer Lewis had its own market and its own clients, but they shared a brand. So most of the work was building something once and making it hold up everywhere it landed."
     },
     {
       "text": "At VML I worked on organic search for Ford.com. Mostly keyword and competitor research, written up as recommendations the content teams could use."
@@ -42,16 +45,16 @@
     }
   ],
   "photo": "/images/yesha.jpg",
-  "photoCaption": "Marketing Operations Associate",
+  "photoCaption": "MSc Marketing, University of Edinburgh",
   "closeHeading": "Say",
   "closeHeadingItalic": "hello",
   "email": "yesha2k@gmail.com",
   "linkedin": "https://www.linkedin.com/in/yesha-prajapati",
   "city": "Chicago, IL",
-  "seoTitle": "Yesha Prajapati, Marketing Operations",
-  "seoDesc": "Marketing operations at Archer Lewis. Campaigns, brand systems and CRM for 35 accounting firms. Previously organic search for Ford.com at VML.",
+  "seoTitle": "Yesha Prajapati, Marketing",
+  "seoDesc": "MSc Marketing student at the University of Edinburgh Business School. Previously marketing operations at Archer Lewis, supporting 35 accounting firms, and organic search for Ford.com at VML.",
   "colorBg": "#2C0A16",
-  "colorNavy": "#000080",
+  "colorNavy": "#1A2550",
   "colorAccent": "#926F34",
   "colorBlush": "#E9A8BC",
   "navItems": [

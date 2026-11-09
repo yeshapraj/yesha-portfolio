@@ -1,5 +1,5 @@
 ---
-title: "Organic search × social: YouTube audit"
+title: "Organic search × Social: YouTube audit"
 summary: "A YouTube audit for Ford led from an SEO perspective, one of the first formal Organic Search and Social collaborations."
 client: "VML, Ford Motor Company"
 group: "VML"
@@ -11,8 +11,8 @@ points:
   - text: "Identified keyword gaps and intent patterns, and used competitor gap analysis to uncover content the channel wasn't capturing."
   - text: "Organised findings into keyword buckets, opportunity themes and a prioritised content roadmap."
   - text: "Presented the final audit multiple times in high-visibility stakeholder meetings."
-image: ""
-caption: "Screenshot"
+image: "/images/work/05-youtube-audit-keyword-buckets.png"
+caption: "Keyword buckets for Ford YouTube strategy (example)"
 gallery: []
 ---
 One of my most notable projects at VML was a **YouTube audit** for **Ford Motor
