@@ -22,6 +22,8 @@ gallery:
     caption: "45L tax credit flyer"
   - image: "/images/work/02-brand-systems-g4.jpg"
     caption: "Bookkeeping services flyer"
+  - image: "/images/work/02-brand-systems-g5.jpg"
+    caption: "JNR Advisory, an Archer Lewis firm, full-page advertisement"
 docs:
   - file: "/files/cost-segregation-whitepaper.pdf"
     label: "Cost Segregation Strategy whitepaper"
@@ -33,6 +35,8 @@ docs:
     label: "45L tax credit flyer"
   - file: "/files/archer-lewis-bookkeeping.pdf"
     label: "Bookkeeping services flyer"
+  - file: "/files/jnr-advisory-ad.pdf"
+    label: "JNR Advisory advertisement"
 ---
 ## Campaign and service collateral
 
